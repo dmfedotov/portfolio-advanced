@@ -7,6 +7,8 @@ const svgSprite = require('gulp-svg-sprites');
 const svgmin = require('gulp-svgmin');
 const cheerio = require('gulp-cheerio');
 const replace = require('gulp-replace');
+const plumber      = require("gulp-plumber");
+const notify       = require("gulp-notify")
 
 // styles 
 const sass = require('gulp-sass');
@@ -49,6 +51,11 @@ const paths = {
 // pug
 function html() {
   return gulp.src(paths.templates.src + "pages/*.pug")
+    .pipe(plumber({
+      errorHandler: notify.onError(function (err) {
+        return {title: "Style", message: err.message}
+      })
+    }))
     .pipe(pug({
       pretty: true
     }))
@@ -58,6 +65,11 @@ function html() {
 // scss
 function styles() {
   return gulp.src('./src/styles/app.scss')
+    .pipe(plumber({
+      errorHandler: notify.onError(function (err) {
+        return {title: "Style", message: err.message}
+      })
+    }))
     .pipe(sourcemaps.init())
     .pipe(sass({
       outputStyle: 'compressed'
@@ -88,6 +100,11 @@ function fonts() {
 // webpack
 function scripts() {
   return gulp.src('src/scripts/app.js')
+    .pipe(plumber({
+      errorHandler: notify.onError(function (err) {
+        return {title: "javaScript", message: err.message}
+      })
+    }))
     .pipe(gulpWebpack(webpackConfig, webpack))
     .pipe(gulp.dest(paths.scripts.dest));
 }
@@ -147,7 +164,7 @@ function sprite() {
 exports.clean = clean;
 exports.styles = styles;
 exports.scripts = scripts;
-exports.templates = html;
+exports.html = html;
 exports.images = images;
 exports.watch = watch;
 exports.server = server;

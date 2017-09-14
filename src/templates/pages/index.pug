@@ -18,19 +18,7 @@ block content
           .person__desc Личный сайт веб разработчика
 
         .welcome__social
-          ul.social
-            li.social__item
-              a.social__link(href="https://vk.com/dmfedotov")
-                svg(class="icon icon__welcome")
-                  use(xlink:href='assets/images/icons/sprite.svg#vk')
-            li.social__item
-              a.social__link(href="https://github.com/dmfedotov")
-                svg(class="icon icon__welcome")
-                  use(xlink:href='assets/images/icons/sprite.svg#github')
-            li.social__item
-              a.social__link(href="#")
-                svg(class="icon icon__welcome")
-                  use(xlink:href='assets/images/icons/sprite.svg#in')
+          +socialList("welcome", socials)
         
         .welcome__list
           ul.main-nav

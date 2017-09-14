@@ -1,0 +1,18 @@
+.icon {
+  display: block;
+  width: 30px;
+  height: 30px;
+}
+
+.icon_welcome {
+  width: 31px;
+  height: 23px;
+  margin: 0 14px;
+  fill: #fff;
+  opacity: .5;
+
+  &:hover {
+      opacity: 1;
+      fill: #0a44aa;
+  }
+}

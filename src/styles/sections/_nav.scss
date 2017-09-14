@@ -1,0 +1,25 @@
+.main-nav {
+  display: flex;
+}
+
+.main-nav__item {
+  display: inline-block;
+
+  &:last-child {
+    a {
+      border-right: 0;
+    }
+  }
+}
+
+.btn_welcome-nav {
+  color: #fff;
+  background-color: #0548be;
+  border-right: 2px solid rgba(#5c86ce, .5);
+  transition: .3s;
+
+  &:hover {
+    background-color: #083c96;
+  }
+}
+

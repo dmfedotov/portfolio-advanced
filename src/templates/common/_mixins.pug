@@ -1,0 +1,10 @@
+//- Создает список социальных иконок с соответствующей svg-иконкой. Принимает два аргумента: модификатор класса иконки, массив с элементами
+mixin socialList(iconModifier, items)
+  - var svgIdModifier = ''
+  ul.social
+    each item in items
+      li.social__item
+        a(href=item.href target="_blank" class='social__link')
+          svg(class='icon icon_' + iconModifier)
+              use(xlink:href='assets/images/icons/sprite.svg#' + item.id)
+
