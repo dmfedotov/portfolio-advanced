@@ -1,15 +1,68 @@
 extends ../template
 
+block title
+  title Блог
 
 block content
-  h1 Блог
-  ul
-    li
-      h2 Заголовок статьи
-      p Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.
-    li
-      h2 Ещё статья
-      p Далеко-далеко за словесными горами в стране.
-    li
-      h2 Последняя статья
-      p Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Курсивных то осталось за.
+  section.section.header.header_blog
+    .header__social
+      +socialList("welcome", socials)
+    .header__menu-button
+      a.menu(href="#")
+        +icon("menu", "hamburger")
+    .header__person
+      .person
+          .person__photo
+            img(class="person__photo-pic" src="assets/images/content/my-ava.jpg", alt="Фото автора блога")
+          .section-title.section-title_color_white
+            .section-title__header Блог
+            .section-title__bg.section-title__bg_blog
+              +icon("header-title-bg", "stars1")
+            .section-title__info Статьи, которые я написал
+          
+
+  section.blog
+    .blog__triangle.blog__triangle_left
+      .triangle.triangle_color_white
+        svg(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 500 100" preserveaspectratio="none")
+                    polygon(points="0,100 0,0 500,85 500,100")
+    .blog__triangle.blog__triangle_right
+      .triangle.triangle_color_white
+        svg(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 500 100" preserveaspectratio="none")
+                    polygon(points="0,100 0,85 500,0 500,100")
+    .blog__left
+      +navList("nav__list_blog", "nav__link_blog", blogNavItems)
+    .blog__right
+      .blog__content
+        .blog__article
+          +blogArticle("Самое важное в SASS", "4 сентября 2017")
+          .blog__article-content
+            include:markdown-it ../../articles/about-sass.md
+        .blog__article
+          +blogArticle("Приёмы в вёрстке, без которых не обходится ни один сайт", "21 августа 2017")
+          .blog__article-content
+            include:markdown-it ../../articles/best-practices.md
+        .blog__article
+          +blogArticle("Самый необходимый набор Gulp плагинов", "11 мая 2017")
+          .blog__article-content
+            include:markdown-it ../../articles/gulp-plugins.md
+        .blog__article
+          +blogArticle("Почему я выбрал Jade", "3 апреля 2017")
+          .blog__article-content
+            include:markdown-it ../../articles/jade.md
+
+  footer.footer.footer_dark
+    .footer__row
+      .footer__col
+        .footer__copyright © Дмитрий Федотов | создано в LoftSchool | 2017
+      .footer__col
+        .footer__nav
+          +navList("nav__list_blog", "nav__link_blog", blogNavItems)
+        .footer__social
+          +socialList("welcome", socials)
+      .footer__col
+        .footer__contacts
+          a(href="skype:SkypeUser" class=".footer__contacts-skype") skype_qwerty
+          a(href="mailto:crismsfiva@gmail.com" class="footer__contacts-mail") crismsfiva@gmail.com
+          a(href="tel:+88005553535" class="footer__contacts-phone") 8 800 555-35-35
+          |г. Новосибирск, ул. Инская, д.4

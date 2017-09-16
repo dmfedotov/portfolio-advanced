@@ -8,3 +8,25 @@ mixin socialList(iconModifier, items)
           svg(class='icon icon_' + iconModifier)
               use(xlink:href='assets/images/icons/sprite.svg#' + item.id)
 
+
+
+mixin icon(iconModifier, svgId)
+  svg(class='icon icon_' + iconModifier)
+    use(xlink:href='assets/images/icons/sprite.svg#' + svgId)
+
+
+
+mixin navList(navModifier, navLinkModifier, items, reduceStep)
+  - var reduceStep = 0
+  ul(class="nav__list " + navModifier)
+    - for (i = 0; i < items.length - reduceStep; i++)
+        li.nav__item
+          a(href= items[i].href class="nav__link " + navLinkModifier)= items[i].name
+
+
+mixin blogArticle(articleName, articleDate)
+  .blog__article-title= articleName
+  .blog__article-date= articleDate
+  
+          
+  
