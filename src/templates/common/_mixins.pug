@@ -17,7 +17,8 @@ mixin icon(iconModifier, svgId)
 
 
 mixin navList(navModifier, navLinkModifier, items, reduceStep)
-  - var reduceStep = 0
+  if !reduceStep
+    - var reduceStep = 0
   ul(class="nav__list " + navModifier)
     - for (i = 0; i < items.length - reduceStep; i++)
         li.nav__item

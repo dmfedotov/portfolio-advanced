@@ -1,0 +1,15 @@
+.triangle {
+  width: 100%;
+  display: flex;
+
+  svg {
+    width: 100%;
+  }
+}
+
+.triangle_color_white {
+
+  svg {
+    fill: $white-color;
+  }
+}

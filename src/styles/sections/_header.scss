@@ -1,0 +1,24 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
+  background: url("../images/bg/header-bg.jpg") center top;
+  background-size: cover;
+}
+
+.header__social {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+
+.header__menu-button {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+
+.header__person {
+  z-index: 2;
+}

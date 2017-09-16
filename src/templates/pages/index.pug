@@ -21,16 +21,10 @@ block content
           +socialList("welcome", socials)
         
         .welcome__list
-          ul.main-nav
-            li.main-nav__item
-              a.btn.btn_welcome-nav(href="my-works.html") Мои работы
-            li.main-nav__item
-              a.btn.btn_welcome-nav(href="about.html") Обо мне
-            li.main-nav__item
-              a.btn.btn_welcome-nav(href="blog.html") Блог
+          +navList("nav__list_welcome", "nav__link_welcome", navItems, 1)
 
 
     
-    footer.footer.footer__welcome
-      .footer__copyright © Дмитрий Федотов | создано в LoftSchool | 2017
+  footer.footer.footer_welcome
+    .footer__copyright © Дмитрий Федотов | создано в LoftSchool | 2017
     
