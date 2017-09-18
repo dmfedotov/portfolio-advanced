@@ -23,14 +23,14 @@ block content
             
   
     section.section.blog
-      .blog__triangle.blog__triangle_left
+      .section__triangle.section__triangle_left
         .triangle.triangle_color_white
           svg(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 500 100" preserveaspectratio="none")
-                      polygon(points="0,100 0,0 500,85 500,100")
-      .blog__triangle.blog__triangle_right
+            polygon(points="0,100 0,0 500,85 500,100")
+      .section__triangle.section__triangle_right
         .triangle.triangle_color_white
           svg(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 500 100" preserveaspectratio="none")
-                      polygon(points="0,100 0,85 500,0 500,100")
+            polygon(points="0,100 0,85 500,0 500,100")
       .blog__left
         .blog__nav
           +navList("nav__list_blog", "nav__link_blog", blogNavItems)

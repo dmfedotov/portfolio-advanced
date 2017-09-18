@@ -11,7 +11,7 @@
 }
 
 .about__left {
-  background: #f2f0e8;
+  background: $light-beige-color;
 }
 
 .about__left-header {
@@ -24,23 +24,4 @@
 
 .about__right {
   background: $beige-color;
-}
-
-.about__triangle {
-  @extend .blog__triangle;
-  position: absolute;
-  bottom: 100%;
-  width: 100%;
-}
-
-.about__triangle_left {
-  @extend .blog__triangle_left;
-  
-  svg {
-    fill: #f2f0e8;
-  }
-}
-
-.about__triangle_right {
-  @extend .blog__triangle_right;
 }

@@ -27,11 +27,15 @@ block content
     
 
     section.section.about
-      .about__left
-        .about__triangle.about__triangle_left
-          .triangle.triangle_color_white
+      .section__triangle.section__triangle_left
+          .triangle.triangle_color_light-beige
             svg(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 500 100" preserveaspectratio="none")
               polygon(points="0,100 0,0 500,85 500,100")
+      .section__triangle.section__triangle_right
+          .triangle.triangle_color_beige
+            svg(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 500 100" preserveaspectratio="none")
+              polygon(points="0,100 0,85 500,0 500,100")
+      .about__left
         .about__left-header
           .section-title
               .section-title__header Обо мне
@@ -51,10 +55,6 @@ block content
                 Этот сайт я сделал в рамках обучения в  Школе онлайн образования LoftSchool. Чуть  позже я освежу в нём свой контент. А пока  посмотрите, как тут всё классно и красиво!
 
       .about__right
-        .about__triangle.about__triangle_right
-          .triangle.triangle_color_beige
-            svg(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 500 100" preserveaspectratio="none")
-              polygon(points="0,100 0,85 500,0 500,100")
         .about__right-content
           .skills
             .skills__header

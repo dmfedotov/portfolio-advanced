@@ -8,9 +8,23 @@
   }
 }
 
-.triangle_color_beige{
-  
-    svg {
-      fill: $beige-color;
-    }
+.triangle_color_beige {
+
+  svg {
+    fill: $beige-color;
   }
+}
+
+.triangle_color_light-beige {
+
+  svg {
+    fill: $light-beige-color;
+  }
+}
+
+.triangle_color_blue {
+
+  svg {
+    fill: rgba($triangle-blue-color, .85);
+  }
+}
