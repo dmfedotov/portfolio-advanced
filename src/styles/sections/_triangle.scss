@@ -4,12 +4,13 @@
 
   svg {
     width: 100%;
-  }
-}
-
-.triangle_color_white {
-
-  svg {
     fill: $white-color;
   }
 }
+
+.triangle_color_beige{
+  
+    svg {
+      fill: $beige-color;
+    }
+  }

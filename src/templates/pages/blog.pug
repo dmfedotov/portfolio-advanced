@@ -1,79 +1,78 @@
-extends ../template-foot
+extends ../template
 
 block title
   title Блог
 
 block content
-  section.section.header.header_blog
-    .header__social
-      +socialList("welcome", socials)
-    .header__menu-button
-      a.menu(href="#")
-        +icon("menu", "hamburger")
-    .header__person
-      .person
+  main.content
+    section.section.header.header_blog
+      .header__social
+        +socialList("header", socials)
+      .header__menu-button
+        a.menu(href="#")
+          +icon("menu", "hamburger")
+      .header__bg.header__bg_blog
+        img(class="header__bg-img" src="assets/images/icons/stars1.svg")
+      .header__person
+        .person
           .person__photo
-            img(class="person__photo-pic" src="assets/images/content/my-ava.jpg", alt="Фото автора блога")
+            img(class="person__photo-pic" src="assets/images/content/my-ava.jpg", alt="Фотоавтора блога")
           .section-title.section-title_color_white
             .section-title__header Блог
-              .section-title__bg.section-title__bg_blog
-                +icon("header-title-bg", "stars1")
             .section-title__info Статьи, которые я написал
-          
+            
+  
+    section.section.blog
+      .blog__triangle.blog__triangle_left
+        .triangle.triangle_color_white
+          svg(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 500 100" preserveaspectratio="none")
+                      polygon(points="0,100 0,0 500,85 500,100")
+      .blog__triangle.blog__triangle_right
+        .triangle.triangle_color_white
+          svg(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 500 100" preserveaspectratio="none")
+                      polygon(points="0,100 0,85 500,0 500,100")
+      .blog__left
+        .blog__nav
+          +navList("nav__list_blog", "nav__link_blog", blogNavItems)
+      .blog__right
+        .blog__content
+          .blog__article
+            +blogArticle("Самое важное в SASS", "4 сентября 2017")
+            .blog__article-content
+              include:markdown-it ../../articles/about-sass.md
+          .blog__article
+            +blogArticle("Приёмы в вёрстке, без которых не обходится ни один сайт", "21 августа 2017")
+            .blog__article-content
+              include:markdown-it ../../articles/best-practices.md
+          .blog__article
+            +blogArticle("Самый необходимый набор Gulp плагинов", "11 мая 2017")
+            .blog__article-content
+              include:markdown-it ../../articles/gulp-plugins.md
+          .blog__article
+            +blogArticle("Почему я выбрал Jade", "3 апреля 2017")
+            .blog__article-content
+              include:markdown-it ../../articles/jade.md
 
-  section.blog
-    .blog__triangle.blog__triangle_left
-      .triangle.triangle_color_white
-        svg(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 500 100" preserveaspectratio="none")
-                    polygon(points="0,100 0,0 500,85 500,100")
-    .blog__triangle.blog__triangle_right
-      .triangle.triangle_color_white
-        svg(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 500 100" preserveaspectratio="none")
-                    polygon(points="0,100 0,85 500,0 500,100")
-    .blog__left
-      .blog__nav
-        +navList("nav__list_blog", "nav__link_blog", blogNavItems)
-    .blog__right
-      .blog__content
-        .blog__article
-          +blogArticle("Самое важное в SASS", "4 сентября 2017")
-          .blog__article-content
-            include:markdown-it ../../articles/about-sass.md
-        .blog__article
-          +blogArticle("Приёмы в вёрстке, без которых не обходится ни один сайт", "21 августа 2017")
-          .blog__article-content
-            include:markdown-it ../../articles/best-practices.md
-        .blog__article
-          +blogArticle("Самый необходимый набор Gulp плагинов", "11 мая 2017")
-          .blog__article-content
-            include:markdown-it ../../articles/gulp-plugins.md
-        .blog__article
-          +blogArticle("Почему я выбрал Jade", "3 апреля 2017")
-          .blog__article-content
-            include:markdown-it ../../articles/jade.md
-
-block footer_dark
-  .footer__top
-    .footer__col
-      .footer__info.
-        Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. 
-    .footer__col
-      .footer__nav
-        +navList("nav__list_footer", "nav__link_footer", navItems)
-      .footer__social
-        +socialList("footer", socials)
-    .footer__col
-      .footer__contacts
-        ul.footer__contacts-list
-          li.footer__contacts-item
-            a(href="skype:SkypeUser" class="footer__contacts-link") skype_qwerty
-          li.footer__contacts-item
-            a(href="mailto:crismsfiva@gmail.com" class="footer__contacts-link") crismsfiva@gmail.com
-          li.footer__contacts-item
-            a(href="tel:+88005553535"  class="footer__contacts-link") 8 800 555-35-35
-          li.footer__contacts-item
-            |Новосибирск, ул. Инская, д.4
-        
-        
-  .footer__bottom
-    .footer__copyright © Дмитрий Федотов | создано  LoftSchool | 2017
+  footer.footer.footer_dark
+    .footer__top
+      .footer__col
+        .footer__info.
+          Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. 
+      .footer__col
+        .footer__nav
+          +navList("nav__list_footer", "nav__link_footer", navItems)
+        .footer__social
+          +socialList("footer", socials)
+      .footer__col
+        .footer__contacts
+          ul.footer__contacts-list
+            li.footer__contacts-item
+              a(href="skype:SkypeUser" class="footer__contacts-link") skype_qwerty
+            li.footer__contacts-item
+              a(href="mailto:crismsfiva@gmail.com" class="footer__contacts-link") crismsfiva@gmail.com
+            li.footer__contacts-item
+              a(href="tel:+88005553535"  class="footer__contacts-link") 8 800 555-35-35
+            li.footer__contacts-item
+              |Новосибирск, ул. Инская, д.4        
+    .footer__bottom
+      .footer__copyright © Дмитрий Федотов | создано  LoftSchool | 2017

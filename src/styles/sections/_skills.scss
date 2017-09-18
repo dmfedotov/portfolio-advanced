@@ -1,0 +1,36 @@
+.skills__header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.skills__desc {
+  margin-bottom: 50px;
+}
+
+.skills__section {
+  margin-bottom: 47px;
+}
+
+.skills__item {
+  margin-bottom: 35px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.skills-row__title {
+  margin-bottom: 20px;
+  font-size: 28px;
+  line-height: 32px;
+  font-weight: 500;
+}
+
+.skills-row__list {
+  display: flex;
+}
+
+.skills-row__item {
+  margin-right: 40px;
+}

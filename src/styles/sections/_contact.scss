@@ -1,0 +1,14 @@
+.contact {
+  display: flex;
+  align-items: center;
+}
+
+.contact__icon {
+  margin-right: 10px;
+}
+
+.contact__text {
+  font-weight: 500;
+  line-height: 24px;
+  color: rgba($main-text-color, .8);
+}

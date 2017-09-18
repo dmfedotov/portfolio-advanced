@@ -28,6 +28,41 @@ mixin navList(navModifier, navLinkModifier, items, reduceStep)
 mixin blogArticle(articleName, articleDate)
   .blog__article-title= articleName
   .blog__article-date= articleDate
+
+mixin skills(skillsList)
+  ul.skills__list
+    each item in skillsList
+      li.skills__item
+        .skills-row
+          .skills-row__title= item.type
+          - var values = item.values
+            ul.skills-row__list
+              - for (i = 0; i < values.length; i++)
+                  li.skills-row__item
+                    .skill
+                      svg(class="circles", viewBox="0 0 120 120")
+                        circle(r="45", cx="50%", cy="50%", fill="none", class="circle__one")
+                        circle(r="45", cx="50%", cy="50%", transform="rotate(-90 60 60)", class="circle__two circle-"+values[i].skillValue)
+                      .skill__name= values[i].skillName
+
+
+mixin headerTitleBg(pageModifier)
+  svg(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 171.5 132.5" class="icon icon_title-bg-" + pageModifier)
+    g
+     circle(cx='4.25', cy='92.25', r='4.25')
+     circle(cx='48.25', cy='128.25', r='4.25')
+     circle(cx='72.75', cy='52.75', r='4.75')
+     circle(cx='8.25', cy='22.25', r='4.25')
+     circle(cx='117.25', cy='96.25', r='2.75')
+     circle(cx='126.25', cy='41.25', r='1.911')
+     circle(cx='167.25', cy='4.25', r='4.25')
+     path(d='M72.75 52.75l44.5 43.5-113-4 44 36 69-32 50-92-41 37-53.5 13.084L8.25 22.25m40 109.084L8.5 24.339')
+
+                      
+      
+    
+  
+
   
           
   

@@ -4,4 +4,100 @@ block title
  title Обо мне
 
 block content
+  main.content
+    section.section.header
+      .header__social
+        +socialList("header", socials)
+      .header__menu-button
+        a.menu(href="#")
+          +icon("menu", "hamburger")
+      .header__bg
+            img(class="header__bg-img" src="assets/images/icons/stars1.svg")
+      .header__content
+        .header__person
+          .person
+            .person__photo
+              img(class="person__photo-pic" src="assets/images/content/my-ava.jpg", alt="Фотоавтора блога")
+            .person__name Дмитрий Федотов
+            .person__desc Личный сайт веб разработчика
+        a(class="header__arrow" href="#")
+          +icon("arrow", "arrow_down")
+
+    
+    
+
+    section.section.about
+      .about__left
+        .about__triangle.about__triangle_left
+          .triangle.triangle_color_white
+            svg(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 500 100" preserveaspectratio="none")
+              polygon(points="0,100 0,0 500,85 500,100")
+        .about__left-header
+          .section-title
+              .section-title__header Обо мне
+                .section-title__bg.section-title__bg_about
+                  +headerTitleBg("about")
+
+        .about__left-content
+          .user
+            .user__photo
+              img.user__photo-pic.flex-img(src="assets/images/content/my-ava.jpg")
+            .user__name
+              .section-title_subtitle Кто я
+            .user__desc
+              p.
+                Я веб разработчик из Богородска. Мне 23 года. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+              p.
+                Этот сайт я сделал в рамках обучения в  Школе онлайн образования LoftSchool. Чуть  позже я освежу в нём свой контент. А пока  посмотрите, как тут всё классно и красиво!
+
+      .about__right
+        .about__triangle.about__triangle_right
+          .triangle.triangle_color_beige
+            svg(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 500 100" preserveaspectratio="none")
+              polygon(points="0,100 0,85 500,0 500,100")
+        .about__right-content
+          .skills
+            .skills__header
+              .section-title_subtitle Чем я могу быть вам полезен
+            .skills__desc
+              p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
+            .skills__section
+              +skills(skillsList)
+    
+    section.section.map
+      .map__contacts
+        .contacts
+          .contacts__header
+            .section-title_subtitle Контакты
+          .contacts__content
+            ul.contacts__list
+              each item in contacts
+                li.contacts__item
+                  .contact
+                    .contact__icon
+                      +icon("contacts", item.svg)
+                    .contact__text= item.title
   
+  footer.footer.footer_dark.footer_dark_transparent
+    .footer__top
+      .footer__col
+        .footer__info.
+          Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. 
+      .footer__col
+        .footer__nav
+          +navList("nav__list_footer", "nav__link_footer", navItems)
+        .footer__social
+          +socialList("footer", socials)
+      .footer__col
+        .footer__contacts
+          ul.footer__contacts-list
+            li.footer__contacts-item
+              a(href="skype:SkypeUser" class="footer__contacts-link") skype_qwerty
+            li.footer__contacts-item
+              a(href="mailto:crismsfiva@gmail.com" class="footer__contacts-link") crismsfiva@gmail.com
+            li.footer__contacts-item
+              a(href="tel:+88005553535"  class="footer__contacts-link") 8 800 555-35-35
+            li.footer__contacts-item
+              |Новосибирск, ул. Инская, д.4        
+    .footer__bottom
+      .footer__copyright © Дмитрий Федотов | создано  LoftSchool | 2017

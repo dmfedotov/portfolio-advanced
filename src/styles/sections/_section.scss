@@ -10,6 +10,26 @@ section {
   color: $main-text-color;
 }
 
+.section-title_subtitle {
+  position: relative;
+  font-size: 35px;
+  line-height: 41px;
+  font-family: Sansus;
+  text-transform: uppercase;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    display: block;
+    width: 90px;
+    height: 3px;
+    background: #9c9d9f;
+    transform: translateX(-50%);
+  }
+}
+
 .section-title_color_white {
   color: $white-color;
 }
@@ -22,6 +42,8 @@ section {
   font-size: $header-text-size;
   line-height: $header-line-height;
   font-family: $header-font;
+  text-transform: uppercase;
+  z-index: 2;
 }
 
 .section-title__bg {
@@ -35,8 +57,16 @@ section {
 }
 
 .section-title__bg_blog {
-  width: 350%;
-  height: 263px;
+  width: 390%;
+}
+
+.section-title__bg_about {
+  @extend .section-title__bg;
+  top: 50%;
+  left: 38%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  opacity: 1;
 }
 
 .section-title__info {

@@ -1,0 +1,30 @@
+.contacts {
+  display: flex;
+  flex-direction: column;
+  width: 580px;
+  padding: 30px 20px 40px;
+  background: rgba($white-color, .7);
+  border-radius: 4px;
+}
+
+.contacts__header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 55px;
+}
+
+.contacts__list {
+  display: flex;
+  // justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.contacts__item {
+  display: block;
+  width: 50%;
+  margin-bottom: 30px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

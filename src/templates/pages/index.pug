@@ -4,27 +4,26 @@ block title
   title Добро пожаловать!
 
 block content
-  section.welcome
-    .container
-      .welcome__auth
-        a(href="#").btn.btn__auth Авторизоваться
+  main.content
+    section.welcome
+      .container
+        .welcome__auth
+          a(href="#").btn.btn__auth Авторизоваться
+  
+        .welcome__main
+  
+          .person
+            .person__photo
+              img(class="person__photo-pic" src="assets/images/content/my-ava.jpg", alt="Фото автора блога")
+            .person__name Дмитрий Федотов
+            .person__desc Личный сайт веб разработчика
+  
+          .welcome__social
+            +socialList("welcome", socials)
+          
+          .welcome__list
+            +navList("nav__list_welcome", "nav__link_welcome", navItems, 1)
 
-      .welcome__main
-
-        .person
-          .person__photo
-            img(class="person__photo-pic" src="assets/images/content/my-ava.jpg", alt="Фото автора блога")
-          .person__name Дмитрий Федотов
-          .person__desc Личный сайт веб разработчика
-
-        .welcome__social
-          +socialList("welcome", socials)
-        
-        .welcome__list
-          +navList("nav__list_welcome", "nav__link_welcome", navItems, 1)
-
-
-    
   footer.footer.footer_welcome
     .footer__copyright © Дмитрий Федотов | создано в LoftSchool | 2017
     

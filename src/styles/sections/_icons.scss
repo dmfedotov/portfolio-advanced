@@ -17,9 +17,19 @@
   }
 }
 
+.icon_header {
+  @extend .icon_welcome;
+}
+
 .icon_footer {
   @extend .icon_welcome;
   margin: 0 26px 0 0;
+}
+
+.icon_contacts {
+  width: 46px;
+  height: 45px;
+  fill: $accent-color;
 }
 
 .icon_menu {
@@ -28,9 +38,20 @@
   fill: $white-color;
 }
 
-.icon_header-title-bg {
-  fill: none;
-  stroke: $white-color;
+.icon_arrow {
+  width: 26px;
+  height: 16px;
+  fill: $arrow-color;
+}
+
+.icon_title-bg-about {
+  width: 105%;
   height: 100%;
-  opacity: .4;
+  fill: none;
+  stroke: #dbe0e6;
+  transform: rotate(-174deg);
+
+  circle {
+    fill: #dbe0e6;
+  }
 }

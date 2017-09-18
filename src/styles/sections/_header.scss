@@ -2,9 +2,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 30px;
+  padding-top: 100px;
   background: url("../images/bg/header-bg.jpg") center top;
   background-size: cover;
+}
+
+.header_blog {
+  padding-top: 30px;
 }
 
 .header__social {
@@ -19,6 +23,41 @@
   right: 30px;
 }
 
+.header__bg {
+  position: absolute;
+  left: 49%;
+  top: 42%;
+  transform: translate(-50%, -50%);
+  width: 38%;
+  height: 44%;
+}
+
+.header__bg_blog {
+  top: 45%;
+  height: 67%;
+}
+
+.header__bg-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: .07;
+}
+
+.header__bg-img
+
+.header__content {
+  z-index: 1;
+}
+
 .header__person {
   z-index: 2;
+}
+
+.header__arrow {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: 130px 0 70px;
+  z-index: 1;
 }
