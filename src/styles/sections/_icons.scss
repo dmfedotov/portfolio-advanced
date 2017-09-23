@@ -1,19 +1,25 @@
 .icon {
   display: block;
   width: 100%;
-  height: 30px;
+  height: 100%;
 }
 
 .icon_welcome {
   width: 31px;
   height: 23px;
   margin: 0 14px;
-  fill: #fff;
-  opacity: .5;
+
+  opacity: 0.5;
+
+  transition-duration: 0.2s;
+  transition-property: opacity, fill;
+
+  fill: #ffffff;
 
   &:hover {
-      opacity: 1;
-      fill: #0a44aa;
+    opacity: 1;
+
+    fill: #0a44aa;
   }
 }
 
@@ -22,36 +28,86 @@
 }
 
 .icon_footer {
-  @extend .icon_welcome;
   margin: 0 26px 0 0;
+
+@extend .icon_welcome;
 }
 
 .icon_contacts {
   width: 46px;
   height: 45px;
+
   fill: $accent-color;
 }
 
 .icon_menu {
   width: 40px;
   height: 35px;
+
   fill: $white-color;
 }
 
-.icon_arrow {
-  width: 26px;
-  height: 16px;
-  fill: $arrow-color;
-}
-
 .icon_title-bg-about {
-  width: 105%;
-  height: 100%;
+  max-width: 100%;
+  height: auto;
+
+  transform: rotate(-170deg);
+
   fill: none;
   stroke: #dbe0e6;
-  transform: rotate(-174deg);
 
   circle {
     fill: #dbe0e6;
   }
+}
+
+.icon_title-bg-portfolio {
+  @extend .icon_title-bg-about;
+  stroke: #3b3e4b;
+
+  circle {
+    fill: #3b3e4b;
+  }
+}
+
+.icon_title-bg-reviews {
+  transform: rotate(25deg);
+  opacity: 0.4;
+
+@extend .icon_title-bg-about;
+  stroke: $white-color;
+
+  circle {
+    fill: $white-color;
+  }
+}
+
+.icon_header-content-bg-portfolio {
+  max-width: 100%;
+  height: auto;
+
+  opacity: 0.15;
+
+  fill: none;
+  stroke: $white-color;
+
+  circle {
+    fill: $white-color;
+  }
+}
+
+.icon_header-content-bg-about {
+  @extend .icon_header-content-bg-portfolio;
+}
+
+.icon_header-content-bg-blog {
+  @extend .icon_header-content-bg-portfolio;
+}
+
+.icon_fill_white {
+  fill: $white-color;
+}
+
+.icon_fill_black {
+  fill: #000000;
 }

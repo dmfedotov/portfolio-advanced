@@ -1,0 +1,19 @@
+.feedback {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  max-width: 380px;
+
+  background: rgba($white-color, 0.05);
+}
+
+.feedback__wrap {
+  padding: 40px 20px 0;
+}
+
+.feedback__header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 55px;
+}

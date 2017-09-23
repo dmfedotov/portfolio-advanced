@@ -1,0 +1,33 @@
+.slider {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 100%;
+}
+
+.slider__info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  padding: 50px 30px;
+
+  background: #f2f0e8;
+}
+
+.slider__display {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  height: 75%;
+  padding: 30px;
+
+  background: #e3e2de;
+}
+
+.slider__controls {
+  display: flex;
+  width: 50%;
+  height: 25%;
+}

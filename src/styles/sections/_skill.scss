@@ -1,5 +1,6 @@
 .skill {
   position: relative;
+
   display: inline-block;
   width: 120px;
   height: 120px;
@@ -9,9 +10,11 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 14px;
+
   font-weight: 500;
-  color: $accent-color;
+  font-size: 14px;
   text-align: center;
+  color: $accent-color;
+
+  transform: translate(-50%, -50%);
 }

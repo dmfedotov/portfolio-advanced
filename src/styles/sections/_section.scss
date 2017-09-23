@@ -5,6 +5,7 @@ section {
 .section__triangle {
   position: absolute;
   bottom: 100%;
+
   width: 50%;
 }
 
@@ -21,11 +22,13 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   color: $main-text-color;
 }
 
 .section-title_subtitle {
   position: relative;
+
   font-size: 35px;
   line-height: 41px;
   font-family: Sansus;
@@ -36,12 +39,18 @@ section {
     position: absolute;
     bottom: -20px;
     left: 50%;
+
     display: block;
     width: 90px;
     height: 3px;
+
     background: #9c9d9f;
     transform: translateX(-50%);
   }
+}
+
+.section-title_subtitle_white {
+  color: $white-color;
 }
 
 .section-title_color_white {
@@ -50,14 +59,18 @@ section {
 
 .section-title__header {
   position: relative;
+  z-index: 2;
+
   display: flex;
   align-items: center;
+  max-width: 500px;
   margin-bottom: 16px;
+
   font-size: $header-text-size;
   line-height: $header-line-height;
   font-family: $header-font;
+  text-align: center;
   text-transform: uppercase;
-  z-index: 2;
 }
 
 .section-title__bg {
@@ -65,9 +78,11 @@ section {
   top: 25%;
   left: 50%;
   z-index: -10;
-  transform: translate(-50%, -75%);
+
   width: 100%;
-  opacity: .4;
+
+  transform: translate(-50%, -75%);
+  opacity: 0.4;
 }
 
 .section-title__bg_blog {
@@ -75,14 +90,42 @@ section {
 }
 
 .section-title__bg_about {
-  @extend .section-title__bg;
   top: 50%;
-  left: 38%;
+  left: 50%;
+  z-index: -10;
+
+  display: flex;
+  justify-content: center;
+
   transform: translate(-50%, -50%);
-  z-index: -1;
   opacity: 1;
+
+  @extend .section-title__bg;
+}
+
+.section-title__bg_portfolio {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: -10;
+
+  display: flex;
+  justify-content: center;
+  width: 260px;
+  height: 170px;
+
+  transform: translate(-50%, -50%);
+  opacity: 0.4;
+}
+
+.section-title__bg_reviews {
+  width: 300px;
+  height: 210px;
+
+  @extend .section-title__bg_portfolio;
 }
 
 .section-title__info {
-  margin-bottom: 55px;
+  max-width: 570px;
+  margin-bottom: 80px;
 }

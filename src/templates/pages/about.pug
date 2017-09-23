@@ -11,8 +11,6 @@ block content
       .header__menu-button
         a.menu(href="#")
           +icon("menu", "hamburger")
-      .header__bg
-            img(class="header__bg-img" src="assets/images/icons/stars1.svg")
       .header__content
         .header__person
           .person
@@ -20,26 +18,30 @@ block content
               img(class="person__photo-pic" src="assets/images/content/my-ava.jpg", alt="Фотоавтора блога")
             .person__name Дмитрий Федотов
             .person__desc Личный сайт веб разработчика
-        a(class="header__arrow" href="#")
-          +icon("arrow", "arrow_down")
+        .header__content-bg
+          +headerContentBg("about")
+      .header__scroll.scroll
+        a.scroll__link(href="#")
+          .scroll__icon
+            +icon("fill_white", "portf_arrow_down")
 
     
     
 
     section.section.about
-      .section__triangle.section__triangle_left
+      section.section__triangle.section__triangle_left
           .triangle.triangle_color_light-beige
             svg(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 500 100" preserveaspectratio="none")
               polygon(points="0,100 0,0 500,85 500,100")
-      .section__triangle.section__triangle_right
+      section.section__triangle.section__triangle_right
           .triangle.triangle_color_beige
             svg(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 500 100" preserveaspectratio="none")
               polygon(points="0,100 0,85 500,0 500,100")
       .about__left
         .about__left-header
-          .section-title
-              .section-title__header Обо мне
-                .section-title__bg.section-title__bg_about
+          section.section-title
+              section.section-title__header Обо мне
+                section.section-title__bg.section-title__bg_about
                   +headerTitleBg("about")
 
         .about__left-content
@@ -47,7 +49,7 @@ block content
             .user__photo
               img.user__photo-pic.flex-img(src="assets/images/content/my-ava.jpg")
             .user__name
-              .section-title_subtitle Кто я
+              section.section-title_subtitle Кто я
             .user__desc
               p.
                 Я веб разработчик из Богородска. Мне 23 года. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
@@ -58,7 +60,7 @@ block content
         .about__right-content
           .skills
             .skills__header
-              .section-title_subtitle Чем я могу быть вам полезен
+              section.section-title_subtitle Чем я могу быть вам полезен
             .skills__desc
               p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
             .skills__section
@@ -68,7 +70,7 @@ block content
       .map__contacts
         .contacts
           .contacts__header
-            .section-title_subtitle Контакты
+            section.section-title_subtitle Контакты
           .contacts__content
             ul.contacts__list
               each item in contacts
@@ -85,7 +87,7 @@ block content
           Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. 
       .footer__col
         .footer__nav
-          +navList("nav__list_footer", "nav__link_footer", navItems)
+          +navList("nav__list_footer", "footer", navItems)
         .footer__social
           +socialList("footer", socials)
       .footer__col

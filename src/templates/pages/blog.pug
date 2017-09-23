@@ -11,23 +11,28 @@ block content
       .header__menu-button
         a.menu(href="#")
           +icon("menu", "hamburger")
-      .header__bg.header__bg_blog
-        img(class="header__bg-img" src="assets/images/icons/stars1.svg")
-      .header__person
-        .person
-          .person__photo
-            img(class="person__photo-pic" src="assets/images/content/my-ava.jpg", alt="Фотоавтора блога")
-          .section-title.section-title_color_white
-            .section-title__header Блог
-            .section-title__info Статьи, которые я написал
+      .header__content
+        .header__person
+          .person
+            .person__photo
+              img(class="person__photo-pic" src="assets/images/content/my-ava.jpg", alt="Фотоавтора блога")
+            section.section-title.section-title_color_white
+              section.section-title__header Блог
+              section.section-title__info Статьи, которые я написал
+        .header__content-bg_blog
+          +headerContentBg("blog")
+      .header__scroll.scroll
+        a.scroll__link(href="#")
+          .scroll__icon
+            +icon("fill_white", "portf_arrow_down")
             
   
     section.section.blog
-      .section__triangle.section__triangle_left
+      section.section__triangle.section__triangle_left
         .triangle.triangle_color_white
           svg(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 500 100" preserveaspectratio="none")
             polygon(points="0,100 0,0 500,85 500,100")
-      .section__triangle.section__triangle_right
+      section.section__triangle.section__triangle_right
         .triangle.triangle_color_white
           svg(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 500 100" preserveaspectratio="none")
             polygon(points="0,100 0,85 500,0 500,100")
@@ -36,19 +41,19 @@ block content
           +navList("nav__list_blog", "nav__link_blog", blogNavItems)
       .blog__right
         .blog__content
-          .blog__article
+          article.blog__article
             +blogArticle("Самое важное в SASS", "4 сентября 2017")
             .blog__article-content
               include:markdown-it ../../articles/about-sass.md
-          .blog__article
+          article.blog__article
             +blogArticle("Приёмы в вёрстке, без которых не обходится ни один сайт", "21 августа 2017")
             .blog__article-content
               include:markdown-it ../../articles/best-practices.md
-          .blog__article
+          article.blog__article
             +blogArticle("Самый необходимый набор Gulp плагинов", "11 мая 2017")
             .blog__article-content
               include:markdown-it ../../articles/gulp-plugins.md
-          .blog__article
+          article.blog__article
             +blogArticle("Почему я выбрал Jade", "3 апреля 2017")
             .blog__article-content
               include:markdown-it ../../articles/jade.md
@@ -60,7 +65,7 @@ block content
           Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. 
       .footer__col
         .footer__nav
-          +navList("nav__list_footer", "nav__link_footer", navItems)
+          +navList("nav__list_footer", "footer", navItems)
         .footer__social
           +socialList("footer", socials)
       .footer__col

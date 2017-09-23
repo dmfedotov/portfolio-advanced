@@ -1,0 +1,54 @@
+.reviews {
+  display: flex;
+  justify-content: center;
+  padding: 60px 30px 0;
+
+  background: url("../images/bg/night_works_bg.jpg") center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.reviews__content::after {
+  content: "";
+
+  display: block;
+  height: 1px;
+  margin-bottom: 189px;
+}
+
+.reviews__header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60px;
+}
+
+.reviews__items {
+  margin-bottom: 70px;
+}
+
+.reviews__list {
+  display: flex;
+  justify-content: center;
+}
+
+.reviews__item {
+  margin-right: 24px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.reviews__feedback {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 70px;
+
+  background: inherit;
+}
+
+.reviews__scroll {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 70px;
+}

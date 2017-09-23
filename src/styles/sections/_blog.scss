@@ -1,7 +1,9 @@
 .blog {
   position: relative;
+
   display: flex;
   padding-top: 50px;
+
   background: $white-color;
 }
 
@@ -24,16 +26,17 @@
   padding-bottom: 70px;
 
   &::after {
-    content: '';
+    content: "";
+
     display: block;
     width: 680px;
     height: 5px;
     margin-top: 70px;
+
     background-color: $light-grey-color;
   }
 
   &:last-child {
-    
     &::after {
       display: none;
     }
@@ -42,14 +45,16 @@
 
 .blog__article-title {
   margin-bottom: 30px;
-  font-family: Sansus;
+
   font-size: 35px;
   line-height: 41px;
+  font-family: Sansus;
 }
 
 .blog__article-date {
   margin-bottom: 20px;
-  color: rgba($accent-color-darken, .7);
+
+  color: rgba($accent-color-darken, 0.7);
 }
 
 .blog__article-content p {

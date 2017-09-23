@@ -1,6 +1,74 @@
 .btn {
   display: inline-block;
   padding: 12px 28px;
-  text-decoration: none;
+
   font-weight: 500;
+  text-decoration: none;
+
+  transition: all 0.2s;
+
+  &:active {
+    background: darken($accent-color, 10%);
+  }
+}
+
+.btn__auth {
+  color: #ffffff;
+
+  border: 2px solid #ffffff;
+
+  &:hover {
+    background-color: #083c96;
+    border-color: #083c96;
+  }
+}
+
+.btn_show-project {
+  display: flex;
+  align-items: center;
+
+  color: $white-color;
+
+  background: $accent-color;
+  border-radius: 5px;
+
+  transition: all 0.3s;
+
+  &:hover {
+    background: $accent-color-darken;
+  }
+}
+
+.btn__icon {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  margin-right: 12px;
+}
+
+.btn_form {
+  width: 50%;
+  padding: 12px 55px;
+
+  font-weight: 500;
+  color: $white-color;
+
+  background: $accent-color;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: $accent-color-darken;
+  }
+}
+
+.btn_bg_transparent {
+  background-color: transparent;
+
+  &:hover {
+    background-color: transparent;
+  }
 }

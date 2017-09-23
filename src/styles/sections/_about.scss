@@ -5,9 +5,10 @@
 .about__left,
 .about__right {
   position: relative;
+
   display: flex;
-  padding: 0 30px;
   width: 50%;
+  padding: 0 30px;
 }
 
 .about__left {

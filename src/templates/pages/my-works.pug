@@ -5,14 +5,12 @@ block title
 
 block content
   main.content
-    section.section.header
+    section.section.header.header_my-works
       .header__social
         +socialList("header", socials)
       .header__menu-button
         a.menu(href="#")
           +icon("menu", "hamburger")
-      .header__bg
-            img(class="header__bg-img" src="assets/images/icons/stars1.svg")
       .header__content
         .header__person
           .person
@@ -20,23 +18,108 @@ block content
               img(class="person__photo-pic" src="assets/images/content/my-ava.jpg", alt="Фотоавтора блога")
             .person__name Дмитрий Федотов
             .person__desc Личный сайт веб разработчика
-        a(class="header__arrow" href="#")
-          +icon("arrow", "arrow_down")
+        .header__content-bg
+          +headerContentBg("portfolio")
+      .header__scroll.header__scroll_my-works.scroll
+        a.scroll__link(href="#")
+          .scroll__icon
+            +icon("fill_white", "portf_arrow_down")
+      .header__bottom
+        section.section__triangle.section__triangle_left
+          .triangle.triangle_color_blue
+            svg(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 500 100" preserveaspectratio="none")
+              polygon(points="0,100 0,0 500,85 500,100")
+        section.section__triangle.section__triangle_right
+          .triangle.triangle_color_blue
+            svg(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 500 100" preserveaspectratio="none")
+              polygon(points="0,100 0,85 500,0 500,100")
+        section.section-title.section-title_color_white
+          section.section-title__header Мои работы
+            section.section-title__bg.section-title__bg_portfolio
+              +headerTitleBg("portfolio")
 
     section.portfolio
-      .section__triangle.section__triangle_left
-        .triangle.triangle_color_blue
-          svg(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 500 100" preserveaspectratio="none")
-            polygon(points="0,100 0,0 500,85 500,100")
-      .section__triangle.section__triangle_right
-        .triangle.triangle_color_blue
-          svg(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 500 100" preserveaspectratio="none")
-            polygon(points="0,100 0,85 500,0 500,100")
-      
-      .portfolio__header
-        .section-title__header Мои работы
-          .section-title__bg
-            +headerTitleBg("portfolio")
+      .slider
+        .slider__info
+          .project
+            .project__title
+              section.section-title_subtitle Сайт школы онлайн образования
+            .project__technologies HTML, CSS, JAVASCRIPT
+            .project__link
+              a.btn.btn_show-project(href="#")
+                .btn__icon
+                  +icon("fill_white", "link")
+                span Посмотреть сайт
+        .slider__display
+          img.flex-img(src="assets/images/content/work-1.png")
+        .slider__controls.controls
+          .controls__left
+            .controls__btn
+              .controls__icon
+                +icon("fill_white", "portf_arrow_down")
+                .controls__icon-bg
+                  +icon("fill_black", "portf_arrow_down")
+            .controls__bg
+              img.flex-img(src="assets/images/content/work-2.jpg")
+          .controls__right
+            .controls__btn
+              .controls__icon
+                +icon("fill_white", "portf_arrow_up")
+                .controls__icon-bg
+                  +icon("fill_black", "portf_arrow_up")
+            .controls__bg
+              img.flex-img(src="assets/images/content/work-3.jpg")
+  
+    section.reviews
+      .reviews__content
+        .reviews__header
+          section.section-title.section-title_color_white
+            section.section-title__header Что обо мне говорят
+              section.section-title__bg.section-title__bg_reviews
+                +reviewsTitleBg("reviews")
+        .reviews__items
+          ul.reviews__list
+            li.reviews__item
+              .review
+                .review__mentor-photo
+                  img.flex-img(src="assets/images/content/review-1.jpg")
+                .review__text
+                  p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                .review__signature
+                  .review__mentor-name Ковальчук Дмитрий
+                  .review__mentor-position — основатель Loftschool
+            li.reviews__item
+              .review
+                .review__mentor-photo
+                  img.flex-img(src="assets/images/content/review-2.jpg")
+                .review__text
+                  p Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах!
+                .review__signature
+                  .review__mentor-name Сабанцев Владимир
+                  .review__mentor-position — преподаватель
+            
+        .reviews__feedback
+          .feedback
+            .feedback__wrap
+              .feedback__header
+                section.section-title_subtitle.section-title_subtitle_white Связаться со мной
+              .feedback__form
+                form.form(action="#" method="post" id="feedback-form")
+                  input.form__input(type="text" placeholder="Ваше имя" id="name")
+                  input.form__input(type="email" placeholder="Ваш email" id="email")
+                  textarea.form__input(placeholder="Ваше сообщение" id="message" rows="6")
+            .form__buttons
+              button.btn.btn_form(type="submit" form="feedback-form") Отправить
+              button.btn.btn_form.btn_bg_transparent(type="reset" form="feedback-form") Очистить   
+               
+        .reviews__scroll.scroll
+          a.scroll__link(href="#")
+            .scroll__icon
+              +icon("fill_white", "portf_arrow_up")
+
+              
+
+    
 
 
   footer.footer.footer_dark.footer_dark_transparent
@@ -46,7 +129,7 @@ block content
           Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. 
       .footer__col
         .footer__nav
-          +navList("nav__list_footer", "nav__link_footer", navItems)
+          +navList("nav__list_footer", "footer", navItems)
         .footer__social
           +socialList("footer", socials)
       .footer__col
