@@ -17,6 +17,12 @@
   border-radius: 50%;
 }
 
+.review__text {
+  @include tablet {
+    font-size: 14px;
+  }
+}
+
 .review__signature {
   display: flex;
   flex-direction: column;

@@ -1,9 +1,23 @@
 .user__photo {
   margin-bottom: 38px;
+
+  @include phone {
+    margin: 0 -10px 20px;
+  }
 }
 
 .user__name {
   display: flex;
   justify-content: center;
   margin-bottom: 50px;
+
+  @include tablet {
+    margin-bottom: 30px;
+  }
+}
+
+.user__desc {
+  @include tablet {
+    font-size: 14px;
+  }
 }

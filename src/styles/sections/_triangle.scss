@@ -4,6 +4,7 @@
 
   svg {
     width: 100%;
+    height: 100%;
     fill: $white-color;
   }
 }
@@ -12,6 +13,12 @@
 
   svg {
     fill: $beige-color;
+  }
+
+  @include tablet {
+    svg {
+      fill: $light-beige-color;
+    }
   }
 }
 

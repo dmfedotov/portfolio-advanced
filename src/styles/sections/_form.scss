@@ -12,12 +12,20 @@
   outline: none;
 
   resize: none;
+
+@include phone {
+    font-size: 14px;
+  }
 }
 
 .form__input::placeholder {
   font-weight: 400;
   font-family: $main-font;
   color: rgba($white-color, 0.5);
+
+@include phone {
+    font-size: 14px;
+  }
 }
 
 .form__buttons {

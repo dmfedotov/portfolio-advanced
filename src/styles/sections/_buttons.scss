@@ -72,3 +72,17 @@
     background-color: transparent;
   }
 }
+
+.btn_form {
+  font-weight: 500;
+  white-space: nowrap;
+
+  @include phone {
+    padding-left: 35px;
+    padding-right: 35px;
+  }
+}
+
+.btn_auth {
+  border-right: 2px solid #7390bf;
+}

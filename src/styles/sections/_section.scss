@@ -32,7 +32,18 @@ section {
   font-size: 35px;
   line-height: 41px;
   font-family: Sansus;
+  text-align: center;
   text-transform: uppercase;
+
+@include tablet {
+    font-size: 30px;
+    line-height: 36px;
+  }
+
+@include tablet {
+    font-size: 21px;
+    line-height: 28px;
+  }
 
   &::after {
     content: "";
@@ -51,6 +62,27 @@ section {
 
 .section-title_subtitle_white {
   color: $white-color;
+
+@include tablet {
+    font-size: 30px;
+  }
+
+@include phone {
+    font-size: 21px;
+    line-height: 28px;
+  }
+}
+
+.section-title_subtitle_auth {
+  color: $white-color;
+
+  @include tablet {
+    font-size: 30px;
+  }
+
+  &::after {
+    display: none;
+  }
 }
 
 .section-title_color_white {
@@ -71,6 +103,16 @@ section {
   font-family: $header-font;
   text-align: center;
   text-transform: uppercase;
+
+@include tablet {
+    font-size: 49px;
+    line-height: 52px;
+  }
+
+@include phone {
+    font-size: 35px;
+    line-height: 42px;
+  }
 }
 
 .section-title__bg {
@@ -100,7 +142,11 @@ section {
   transform: translate(-50%, -50%);
   opacity: 1;
 
-  @extend .section-title__bg;
+@extend .section-title__bg;
+
+@include phone {
+    display: none;
+  }
 }
 
 .section-title__bg_portfolio {
@@ -116,16 +162,35 @@ section {
 
   transform: translate(-50%, -50%);
   opacity: 0.4;
+
+@include phone {
+    width: 200px;
+    height: 110px;
+  }
 }
 
 .section-title__bg_reviews {
   width: 300px;
   height: 210px;
 
-  @extend .section-title__bg_portfolio;
+@extend .section-title__bg_portfolio;
+
+@include tablet {
+    width: 270px;
+    height: 180px;
+  }
+
+@include phone {
+    width: 200px;
+    height: 110px;
+  }
 }
 
 .section-title__info {
   max-width: 570px;
   margin-bottom: 80px;
+
+@include tablet {
+    font-size: 14px;
+  }
 }

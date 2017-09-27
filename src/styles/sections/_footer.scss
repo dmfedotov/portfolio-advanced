@@ -10,9 +10,14 @@
   right: 0;
   bottom: 0;
   left: 0;
+  z-index: 10;
 
   justify-content: center;
-  padding-bottom: 40px;
+  padding: 0 10px 40px;
+
+@include phone {
+    padding-bottom: 10px;;
+  }
 }
 
 .footer_dark {
@@ -21,6 +26,10 @@
   flex-wrap: wrap;
 
   color: $white-color;
+
+@include tablet {
+    font-size: 14px;
+  }
 }
 
 .footer_dark_transparent {
@@ -32,12 +41,32 @@
   opacity: 0.95;
 }
 
+.footer__copyright {
+  text-align: center;
+}
+
+.footer__span {
+  display: inline-block;
+
+  white-space: nowrap;
+}
+
 .footer__top {
   display: flex;
   width: 100%;
   padding: 28px 30px;
 
   background: $footer-color-grey;
+
+@include tablet {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 27px 24px 24px;
+  }
+
+@include phone {
+    padding: 18px 10px 15px;
+  }
 }
 
 .footer__col {
@@ -46,26 +75,86 @@
   align-items: flex-start;
   width: calc(100% / 3);
   margin-right: 30px;
+  padding-right: 10px;
 
   border-right: 2px solid $footer-border-color;
+
+@include footer__col-width {
+    width: auto;
+  }
+
+@include tablet {
+    margin-right: 0;
+    padding-right: 0;
+
+    border-right: none;
+  }
 
   &:last-child {
     border-right: none;
   }
 }
 
+.footer__col_copyright {
+  @include tablet {
+    width: 100%;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+
+    text-align: center;
+
+    border-bottom: 1px solid #64656c;
+  }
+}
+
+.footer__col_nav {
+  @include footer__col-layout {
+    align-items: center;
+    width: 100%;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+
+    border-bottom: 1px solid #64656c;
+  }
+}
+
+.footer__col_contacts {
+  @include footer__col-layout {
+    align-items: center;
+    width: 100%;
+  }
+}
+
 .footer__info {
-  width: 380px;
+  min-width: 230px;
+  max-width: 380px;
+
+@include tablet {
+    width: 100%;
+    max-width: none;
+  }
 }
 
 .footer__nav {
   margin-bottom: 25px;
+
+@include phone {
+    margin-bottom: 15px;
+  }
 }
 
 .footer__contacts {
-  width: 280px;
+  width: 100%;
 
   text-align: left;
+
+@include tablet {
+    text-align: right;
+  }
+
+@include footer__col-layout {
+    text-align: center;
+  }
 }
 
 .footer__contacts-link {

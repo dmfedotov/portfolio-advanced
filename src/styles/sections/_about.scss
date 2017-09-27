@@ -1,5 +1,11 @@
 .about {
   display: flex;
+
+@include tablet {
+    flex-wrap: wrap;
+
+    font-size: 14px;
+  }
 }
 
 .about__left,
@@ -8,21 +14,65 @@
 
   display: flex;
   width: 50%;
-  padding: 0 30px;
+  padding: 0 20px;
 }
 
 .about__left {
   background: $light-beige-color;
+
+@include laptop {
+    flex-direction: column;
+  }
+
+@include tablet {
+    width: 100%;
+    padding: 25px 100px 0;
+  }
+
+@include phone {
+    padding: 25px 10px 0;
+  }
+}
+
+.about__left-header,
+.about__left-content {
+  width: 50%;
+
+@include laptop {
+    width: 100%;
+    max-width: 445px;
+    margin: 0 auto 30px;
+  }
+
+@include phone {
+    max-width: 470px;
+    margin-bottom: 0;
+  }
 }
 
 .about__left-header {
-  width: 50%;
-}
+  margin-bottom: 45px;
 
-.about__left-content {
-  width: 50%;
+@include phone {
+    margin-bottom: 18px;
+  }
 }
 
 .about__right {
   background: $beige-color;
+
+@include tablet {
+    width: 100%;
+    padding: 45px 100px 0;
+  }
+
+@include phone {
+    padding: 10px 10px 0;
+
+    background: $light-beige-color;
+  }
+}
+
+.about__right-content {
+  width: 100%;
 }

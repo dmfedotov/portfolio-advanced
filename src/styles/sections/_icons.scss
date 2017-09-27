@@ -111,3 +111,23 @@
 .icon_fill_black {
   fill: #000000;
 }
+
+.icon_auth {
+  fill: #c4cbcd;
+}
+
+.icon_check {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 0;
+  height: 0;
+
+  transform: translate(-50%, -50%);
+
+  transition: width 0.3s, height 0.3s;
+
+  fill: $white-color;
+}
+

@@ -18,7 +18,7 @@ block content
               img(class="person__photo-pic" src="assets/images/content/my-ava.jpg", alt="Фотоавтора блога")
             .person__name Дмитрий Федотов
             .person__desc Личный сайт веб разработчика
-        .header__content-bg
+        .header__content-bg.header__content-bg_portfolio
           +headerContentBg("portfolio")
       .header__scroll.header__scroll_my-works.scroll
         a.scroll__link(href="#")
@@ -124,15 +124,15 @@ block content
 
   footer.footer.footer_dark.footer_dark_transparent
     .footer__top
-      .footer__col
+      .footer__col.footer__col_copyright
         .footer__info.
           Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. 
-      .footer__col
+      .footer__col.footer__col_nav
         .footer__nav
           +navList("nav__list_footer", "footer", navItems)
         .footer__social
           +socialList("footer", socials)
-      .footer__col
+      .footer__col.footer__col_contacts
         .footer__contacts
           ul.footer__contacts-list
             li.footer__contacts-item
@@ -144,4 +144,6 @@ block content
             li.footer__contacts-item
               |Новосибирск, ул. Инская, д.4        
     .footer__bottom
-      .footer__copyright © Дмитрий Федотов | создано  LoftSchool | 2017
+      .footer__copyright
+        .footer__span © Дмитрий Федотов 
+        .footer__span | Создано с любовью в LoftSchool | 2017

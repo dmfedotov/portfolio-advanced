@@ -1,3 +1,7 @@
 .portfolio {
   height: 100vh;
+
+@include tablet {
+    height: auto;
+  }
 }

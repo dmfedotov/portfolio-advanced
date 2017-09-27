@@ -17,6 +17,10 @@ html {
   background-color: #f2f0e8;
 
   -webkit-font-smoothing: antialiased;
+
+@include phone {
+    font-size: 14px;
+  }
 }
 
 ul {
@@ -39,6 +43,10 @@ h6 {
   font-weight: normal;
 }
 
+img {
+  box-sizing: content-box;
+}
+
 .wrapper {
   position: relative;
 
@@ -55,8 +63,9 @@ h6 {
 }
 
 .flex-img {
+  display: block;
   max-width: 100%;
   max-height: 100%;
-  margin: 0 auto;
-;
+  margin-right: auto;
+  margin-left: auto;
 }

@@ -1,28 +1,56 @@
 .contacts {
   display: flex;
   flex-direction: column;
-  width: 580px;
+  max-width: 580px;
+  margin-bottom: 200px;
   padding: 30px 20px 40px;
 
   background: rgba($white-color, 0.7);
   border-radius: 4px;
+
+@include tablet {
+    margin-bottom: 250px;
+    padding-bottom: 30px;
+  }
+
+@include phone {
+    width: 100%;
+
+    background: #fcfcfc;
+  }
 }
 
 .contacts__header {
   display: flex;
   justify-content: center;
   margin-bottom: 55px;
+
+@include tablet {
+    margin-bottom: 35px;
+  }
 }
 
 .contacts__list {
   display: flex;
   flex-wrap: wrap;
+
+@include tablet {
+    flex-direction: column;
+  }
 }
 
 .contacts__item {
   display: block;
   width: 50%;
   margin-bottom: 30px;
+
+@include tablet {
+    width: 100%;
+  }
+
+@include phone {
+    margin-bottom: 10px;
+  }
 
   &:last-child {
     margin-bottom: 0;

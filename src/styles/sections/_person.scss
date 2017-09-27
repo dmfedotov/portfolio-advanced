@@ -25,6 +25,10 @@
   font-size: 28px;
   line-height: 34px;
   color: #ffffff;
+
+  @include phone {
+    font-size: 21px;
+  }
 }
 
 .person__desc {

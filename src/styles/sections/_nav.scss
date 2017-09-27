@@ -8,6 +8,7 @@
   font-weight: 500;
   color: $white-color;
   text-decoration: none;
+  white-space: nowrap;
 
   transition-duration: 0.2s;
   transition-property: background-color, color;
@@ -29,6 +30,14 @@
 .nav__item_footer {
   margin-right: 40px;
 
+  @include tablet {
+    margin-right: 30px;
+  }
+
+@include phone {
+    margin-right: 10px;
+  }
+
   &:last-child {
     margin-right: 0;
   }
@@ -44,6 +53,7 @@
 
   font-weight: 400;
   color: $main-text-color;
+  white-space: normal;
 
   border-right: solid 3px transparent;
 
@@ -60,6 +70,10 @@
 
   background-color: $accent-color;
   border-right: 2px solid rgba(#5c86ce, 0.5);
+
+@include phone {
+    padding: 10px 22px;
+  }
 
   &:hover {
     background-color: #083c96;

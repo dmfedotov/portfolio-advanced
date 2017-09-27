@@ -1,13 +1,19 @@
 .project {
-  max-width: 400px;
+  min-width: 460px;
 }
 
 .project__title {
   display: flex;
   justify-content: center;
+  max-width: 550px;
   margin-bottom: 47px;
 
   text-align: center;
+
+@include phone {
+    max-width: 200px;
+    margin: 0 auto 35px;
+  }
 }
 
 .project__technologies {
@@ -17,6 +23,14 @@
   text-align: center;
   color: $accent-color-darken;
   text-transform: uppercase;
+
+@include tablet {
+    margin-bottom: 25px;
+  }
+
+@include phone {
+    margin-bottom: 15px;
+  }
 }
 
 .project__link {

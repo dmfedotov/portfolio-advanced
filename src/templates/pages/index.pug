@@ -6,24 +6,58 @@ block title
 block content
   main.content
     section.welcome
-      .container
-        .welcome__auth
-          a(href="#").btn.btn__auth Авторизоваться
+      .welcome__auth
+        a(href="#").btn.btn__auth Авторизоваться 
+      .welcome__main
+        .flip-container
+          .flipper
+            .front
+              .person
+                .person__photo
+                  img(class="person__photo-pic" src="assets/images/content/my-ava.jpg", alt="Фото автора блога")
+                .person__name Дмитрий Федотов
+                .person__desc Личный сайт веб разработчика 
+                .welcome__social
+                  +socialList("welcome", socials)         
+                .welcome__list
+                  +navList("nav__list_welcome", "welcome", navItems, 1)
+            .back
+              .auth
+                .auth__wrap
+                  .auth__header
+                    section.section-title_subtitle.section-title_subtitle_auth Авторизуйтесь
+                  .auth__form
+                    form.welcome-form(action="#" method="post")
+                      .welcome-form__row
+                        .welcome-form__icon
+                          +icon("auth", "login")
+                        input.welcome-form__input(type="text" placeholder="Логин" id="login" name="login")
+                      .welcome-form__row
+                        .welcome-form__icon
+                          +icon("auth", "password")
+                        input.welcome-form__input(type="password" placeholder="Пароль" name="password")
+                      label.welcome-form__check
+                        input.welcome-form__input-check(type="checkbox" name="check" id="welcome-check" checked)
+                        .welcome-form__check-fake
+                          +icon("check", "check")
+                        .welcome-form__check-title Я человек
+                      span.welcome-form__radio-title Вы точно не робот?
+                      .welcome-form__radio-wrap
+                        label.welcome-form__radio
+                          input.welcome-form__input-radio(type="radio", name="welcome-radio" checked)
+                          .welcome-form__radio-fake
+                          .welcome-form__radio-text Да
+                        label.welcome-form__radio
+                          input.welcome-form__input-radio(type="radio", name="welcome-radio")
+                          .welcome-form__radio-fake
+                          .welcome-form__radio-text Не уверен
+                .form__buttons
+                  .btn.btn_form.btn_auth На главную
+                  button.btn.btn_form(type="submit" form="welcome-form") Войти
+      .welcome-overlay      
   
-        .welcome__main
-  
-          .person
-            .person__photo
-              img(class="person__photo-pic" src="assets/images/content/my-ava.jpg", alt="Фото автора блога")
-            .person__name Дмитрий Федотов
-            .person__desc Личный сайт веб разработчика
-  
-          .welcome__social
-            +socialList("welcome", socials)
-          
-          .welcome__list
-            +navList("nav__list_welcome", "welcome", navItems, 1)
-
   footer.footer.footer_welcome
-    .footer__copyright © Дмитрий Федотов | создано в LoftSchool | 2017
+    .footer__copyright
+      .footer__span © Дмитрий Федотов
+      .footer__span | Создано с любовью в LoftSchool | 2017
     

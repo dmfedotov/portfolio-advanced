@@ -6,6 +6,10 @@
   background: url("../images/bg/night_works_bg.jpg") center;
   background-size: cover;
   background-attachment: fixed;
+
+@include phone {
+    padding: 35px 10px;
+  }
 }
 
 .reviews__content::after {
@@ -14,25 +18,63 @@
   display: block;
   height: 1px;
   margin-bottom: 189px;
+
+@include tablet {
+    margin-bottom: 230px;
+  }
+
+@include footer__col-layout {
+    margin-bottom: 330px;
+  }
+
+@include phone {
+    margin-bottom: 275px;
+  }
 }
 
 .reviews__header {
   display: flex;
   justify-content: center;
   margin-bottom: 60px;
+
+@include tablet {
+    max-width: 300px;
+    margin: 0 auto;
+  }
 }
 
 .reviews__items {
   margin-bottom: 70px;
+
+@include tablet {
+    margin-bottom: 45px;
+  }
+
+@include phone {
+    margin-top: 20px;
+  }
 }
 
 .reviews__list {
   display: flex;
   justify-content: center;
+
+@include phone {
+    flex-direction: column;
+  }
 }
 
 .reviews__item {
   margin-right: 24px;
+
+@include phone {
+    margin-right: 0;
+    margin-bottom: 35px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 
   &:last-child {
     margin-right: 0;
@@ -45,6 +87,10 @@
   margin-bottom: 70px;
 
   background: inherit;
+
+@include phone {
+    margin-bottom: 40px;
+  }
 }
 
 .reviews__scroll {

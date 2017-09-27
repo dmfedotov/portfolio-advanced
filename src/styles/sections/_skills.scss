@@ -2,20 +2,34 @@
   display: flex;
   justify-content: center;
   margin-bottom: 50px;
+
+@include laptop {
+    max-width: 250px;
+  }
+
+@include tablet {
+    margin: 0 auto 30px;
+  }
 }
 
 .skills__desc {
   margin-bottom: 50px;
+
+@include tablet {
+    max-width: 470px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+@include phone {
+    margin-bottom: 20px;
+  }
 }
 
 .skills__section {
   margin-bottom: 47px;
-}
 
-.skills__item {
-  margin-bottom: 35px;
-
-  &:last-child {
+@include phone {
     margin-bottom: 0;
   }
 }
@@ -26,18 +40,29 @@
   font-weight: 500;
   font-size: 28px;
   line-height: 32px;
+
+@include tablet {
+    font-size: 20px;
+    line-height: 27px;
+    text-align: center;
+  }
 }
 
 .skills-row__list {
   display: flex;
   flex-wrap: wrap;
   max-width: 770px;
+  margin: 0 -18px;
+
+@include tablet {
+    justify-content: center;
+  }
 }
 
 .skills-row__item {
-  margin-right: 40px;
+  margin: 0 18px 40px;
 
-  &:last-child {
-    margin-right: 0;
+@include phone {
+    margin-bottom: 25px;
   }
 }

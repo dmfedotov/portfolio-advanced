@@ -1,0 +1,36 @@
+// media
+@mixin desktop() {
+  @media screen and (max-width: 1800px) {
+    @content;
+  }
+}
+
+@mixin footer__col-width() {
+  @media screen and (max-width: 1320px) {
+    @content;
+  }
+}
+
+@mixin laptop() {
+  @media screen and (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin tablet() {
+  @media screen and (max-width: 990px) {
+    @content;
+  }
+}
+
+@mixin footer__col-layout() {
+  @media screen and (max-width: 600px) {
+    @content;
+  }
+}
+
+@mixin phone() {
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+}

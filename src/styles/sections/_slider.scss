@@ -3,6 +3,10 @@
   flex-direction: column;
   flex-wrap: wrap;
   height: 100%;
+
+@include tablet {
+    flex-wrap: nowrap;
+  }
 }
 
 .slider__info {
@@ -14,6 +18,15 @@
   padding: 50px 30px;
 
   background: #f2f0e8;
+
+@include tablet {
+    height: 25%;
+  }
+
+@include phone {
+    padding-top: 40px;
+    padding-bottom: 30px;
+  }
 }
 
 .slider__display {
@@ -24,10 +37,27 @@
   padding: 30px;
 
   background: #e3e2de;
+
+@include tablet {
+    order: -10;
+    height: 50%;
+  }
 }
 
 .slider__controls {
   display: flex;
   width: 50%;
   height: 25%;
+
+@include tablet {
+    height: 25%;
+  }
+}
+
+.slider__info,
+.slider__display,
+.slider__controls {
+  @include tablet {
+    width: 100%;
+  }
 }

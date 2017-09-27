@@ -1,0 +1,18 @@
+
+.auth__wrap {
+  min-width: 380px;
+  padding: 30px 20px 38px;
+
+@include tablet {
+    padding-bottom: 50px;
+  }
+
+@include phone {
+    min-width: 0;
+  }
+}
+
+.auth__header {
+  margin-bottom: 35px;
+}
+
