@@ -1,14 +1,12 @@
 .form__input {
   width: 100%;
-  margin-bottom: 20px;
   padding: 12px 16px;
 
   font-family: $main-font;
   color: rgba($white-color, 0.5);
 
   background: rgba($white-color, 0.07);
-  border: none;
-  border-radius: 3px;
+  border: solid 1px transparent;
   outline: none;
 
   resize: none;
@@ -16,6 +14,129 @@
 @include phone {
     font-size: 14px;
   }
+
+  &:focus {
+    border-color: $accent-color;
+  }
+
+  &:focus + .form__field-icon {
+    svg {
+      fill: $accent-color;
+    }
+  }
+
+  &::placeholder {
+    color: rgba(#373e42, 0.5);
+  }
+}
+
+.form__input_login {
+  border-radius: 0 5px 5px 0;
+}
+
+.form__field-icon {
+  order: -10;
+  width: 45px;
+  height: 45px;
+  padding: 14px;
+
+  background: #f0efe9;
+}
+
+.form__line {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.form__check-label {
+  display: flex;
+  align-items: center;
+}
+
+.form__check-elem,
+.form__radio-elem {
+  position: absolute;
+  top: 0;
+  left: -9999px;
+}
+
+.form__check-fake {
+  position: relative;
+
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+
+  background: #0548be;
+}
+
+.form__check-elem:checked + .form__check-fake .icon_check {
+  width: 11px;
+  height: 9px;
+}
+
+.form__check-title {
+  color: rgba($white-color, 0.8);
+}
+
+.form__line-title {
+  margin-bottom: 10px;
+
+  font-weight: 700;
+  text-align: center;
+  color: rgba($white-color, 0.8);
+}
+
+.form__radio {
+  margin-right: 40px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.form__radio-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form__radio-fake {
+  position: relative;
+
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+
+  background: $white-color;
+  border-radius: 50%;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 0;
+    height: 0;
+
+    background: $accent-color;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+
+    transition: width 0.3s, height 0.3s;
+  }
+}
+
+.form__radio-elem:checked + .form__radio-fake::before {
+  width: 8px;
+  height: 8px;
+}
+
+.form__radio-text {
+  font-weight: 500;
+  color: rgba($white-color, .8);
 }
 
 .form__input::placeholder {
@@ -31,3 +152,13 @@
 .form__buttons {
   display: flex;
 }
+
+.form__field {
+  display: flex;
+  width: 100%;
+  margin-bottom: 20px;
+
+  border: none;
+  outline: none;
+}
+
