@@ -30,7 +30,7 @@
 .nav__item_footer {
   margin-right: 40px;
 
-  @include tablet {
+@include tablet {
     margin-right: 30px;
   }
 
@@ -88,5 +88,88 @@
       border-right: 0;
     }
   }
+}
+
+.nav-toggle {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  width: 40px;
+  height: 36px;
+
+@include phone {
+    width: 25px;
+    height: 23px;
+  }
+
+  &:hover .nav-toggle__button::before {
+    transform: translateY(-50%);
+  }
+
+  &:hover .nav-toggle__button::after {
+    transform: translateY(50%);
+  }
+}
+
+.nav-toggle {
+  &:hover .nav-toggle__button_close::before {
+    transform: rotate(-45deg) translate(-11px, 11px);
+  }
+
+  &:hover .nav-toggle__button_close::after {
+    transform: rotate(45deg) translate(-11px, -11px);
+  }
+}
+
+.nav-toggle:hover .nav-toggle__button,
+.nav-toggle:hover .nav-toggle__button::before,
+.nav-toggle:hover .nav-toggle__button::after {
+  background: $white-color;
+}
+
+.nav-toggle__button::before,
+.nav-toggle__button::after {
+  content: "";
+  position: absolute;
+}
+
+.nav-toggle__button::before {
+  top: 0;
+}
+
+.nav-toggle__button::after {
+  bottom: 0;
+}
+
+.nav-toggle__button,
+.nav-toggle__button::before,
+.nav-toggle__button::after {
+  display: block;
+  width: inherit;
+  height: 5px;
+
+  background: rgba($white-color, 0.7);
+  border-radius: 3px;
+
+  transition: all 0.2s ease;
+
+@include phone {
+    height: 3px;
+  }
+}
+
+.nav-toggle__button_close {
+  height: 0;
+}
+
+.nav-toggle__button_close::before {
+  background: $white-color;
+  transform: rotate(-45deg) translate(-11px, 11px);
+}
+
+.nav-toggle__button_close::after {
+  background: $white-color;
+  transform: rotate(45deg) translate(-11px, -11px);
 }
 

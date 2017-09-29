@@ -1,5 +1,5 @@
-const $ = require('jquery');
-const flipper = require('./common/flipper');
+import {flipper} from './common/flipper';
+import {parallax} from './common/parallax';
 
 
 

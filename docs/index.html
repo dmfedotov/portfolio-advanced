@@ -10,7 +10,14 @@
   <body>
     <div class="wrapper">
       <main class="content">
-        <section class="welcome">
+        <section class="welcome parallax">
+          <div class="parallax__layer">
+            <video class="parallax__layer-video" width="100%" height="auto" preload="auto" autoplay="autoplay" loop="loop">
+              <source src="assets/videos/night.mp4" type="video/mp4"/>
+              <source src="assets/videos/night.webm" type="video/webm"/>
+            </video>
+          </div>
+          <div class="parallax__layer"><img class="parallax__layer-img" src="assets/images/bg/night_bg.png"/></div>
           <div class="welcome__auth-btn"><a class="btn btn__auth" href="#">Авторизоваться </a></div>
           <div class="welcome__main">
             <div class="welcome__flipper">

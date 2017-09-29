@@ -89,6 +89,16 @@ mixin reviewsTitleBg(pageModifier)
       circle(cx='94.182', cy='104.182', r='2.848')
       path(d='M50.183 5.182l-45 55 26 61.001z')
       path(d='M100.183 49.182l-50-44-45 55 89 44.43zm-35 6l-34 66.001')
+
+mixin parallax()
+  .parallax__layer
+     video.parallax__layer-video(width="100%" height="auto" preload="auto" autoplay="autoplay" loop="loop")
+      source(src="assets/videos/night.mp4" type="video/mp4")
+      source(src="assets/videos/night.webm" type="video/webm")
+  .parallax__layer
+    img.parallax__layer-img(src="assets/images/bg/night_bg.png")
+  
+
     
   
 
