@@ -10,7 +10,14 @@
   <body>
     <div class="wrapper">
       <main class="content">
-        <section class="section header header_my-works">
+        <section class="section header header_my-works parallax">
+          <div class="parallax__layer">
+            <video class="parallax__layer-video" width="100%" height="auto" preload="auto" autoplay="autoplay" loop="loop">
+              <source src="assets/videos/night.mp4" type="video/mp4"/>
+              <source src="assets/videos/night.webm" type="video/webm"/>
+            </video>
+          </div>
+          <div class="parallax__layer"><img class="parallax__layer-img" src="assets/images/bg/night_bg.png"/></div>
           <div class="header__social">
             <ul class="social">
               <li class="social__item"><a class="social__link" href="https://vk.com/dmfedotov" target="_blank">
@@ -27,10 +34,7 @@
                   </svg></a></li>
             </ul>
           </div>
-          <div class="header__menu-button"><a class="menu" href="#">
-              <svg class="icon icon_menu">
-                <use xlink:href="assets/images/icons/sprite.svg#hamburger"></use>
-              </svg></a></div>
+          <div class="header__menu-button"><a class="nav-toggle" href="#"><span class="nav-toggle__button"></span></a></div>
           <div class="header__content">
             <div class="header__person">
               <div class="person">

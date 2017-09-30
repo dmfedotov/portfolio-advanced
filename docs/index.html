@@ -10,93 +10,105 @@
   <body>
     <div class="wrapper">
       <main class="content">
-        <section class="welcome">
-          <div class="welcome__auth"><a class="btn btn__auth" href="#">Авторизоваться </a></div>
+        <section class="welcome parallax">
+          <div class="parallax__layer">
+            <video class="parallax__layer-video" width="100%" height="auto" preload="auto" autoplay="autoplay" loop="loop">
+              <source src="assets/videos/night.mp4" type="video/mp4"/>
+              <source src="assets/videos/night.webm" type="video/webm"/>
+            </video>
+          </div>
+          <div class="parallax__layer"><img class="parallax__layer-img" src="assets/images/bg/night_bg.png"/></div>
+          <div class="welcome__auth-btn"><a class="btn btn__auth" href="#">Авторизоваться </a></div>
           <div class="welcome__main">
-            <div class="flip-container">
+            <div class="welcome__flipper">
               <div class="flipper">
-                <div class="front">
-                  <div class="person">
+                <div class="flipper__front">
+                  <div class="welcome__person person">
                     <div class="person__photo"><img class="person__photo-pic" src="assets/images/content/my-ava.jpg" alt="Фото автора блога"></div>
                     <div class="person__name">Дмитрий Федотов</div>
                     <div class="person__desc">Личный сайт веб разработчика </div>
-                    <div class="welcome__social">
-                      <ul class="social">
-                        <li class="social__item"><a class="social__link" href="https://vk.com/dmfedotov" target="_blank">
-                            <svg class="icon icon_welcome">
-                              <use xlink:href="assets/images/icons/sprite.svg#vk"></use>
-                            </svg></a></li>
-                        <li class="social__item"><a class="social__link" href="https://github.com/dmfedotov" target="_blank">
-                            <svg class="icon icon_welcome">
-                              <use xlink:href="assets/images/icons/sprite.svg#github"></use>
-                            </svg></a></li>
-                        <li class="social__item"><a class="social__link" href="#" target="_blank">
-                            <svg class="icon icon_welcome">
-                              <use xlink:href="assets/images/icons/sprite.svg#in"></use>
-                            </svg></a></li>
-                      </ul>
-                    </div>
-                    <div class="welcome__list">
-                      <ul class="nav__list nav__list_welcome">
-                        <li class="nav__item nav__item_welcome"><a class="nav__link nav__link_welcome" href="my-works.html">Мои работы</a></li>
-                        <li class="nav__item nav__item_welcome"><a class="nav__link nav__link_welcome" href="about.html">Обо мне</a></li>
-                        <li class="nav__item nav__item_welcome"><a class="nav__link nav__link_welcome" href="blog.html">Блог</a></li>
-                      </ul>
-                    </div>
+                  </div>
+                  <div class="welcome__social">
+                    <ul class="social">
+                      <li class="social__item"><a class="social__link" href="https://vk.com/dmfedotov" target="_blank">
+                          <svg class="icon icon_welcome">
+                            <use xlink:href="assets/images/icons/sprite.svg#vk"></use>
+                          </svg></a></li>
+                      <li class="social__item"><a class="social__link" href="https://github.com/dmfedotov" target="_blank">
+                          <svg class="icon icon_welcome">
+                            <use xlink:href="assets/images/icons/sprite.svg#github"></use>
+                          </svg></a></li>
+                      <li class="social__item"><a class="social__link" href="#" target="_blank">
+                          <svg class="icon icon_welcome">
+                            <use xlink:href="assets/images/icons/sprite.svg#in"></use>
+                          </svg></a></li>
+                    </ul>
+                  </div>
+                  <div class="welcome__buttons">
+                    <ul class="nav__list nav__list_welcome">
+                      <li class="nav__item nav__item_welcome"><a class="nav__link nav__link_welcome" href="my-works.html">Мои работы</a></li>
+                      <li class="nav__item nav__item_welcome"><a class="nav__link nav__link_welcome" href="about.html">Обо мне</a></li>
+                      <li class="nav__item nav__item_welcome"><a class="nav__link nav__link_welcome" href="blog.html">Блог</a></li>
+                    </ul>
                   </div>
                 </div>
-                <div class="back">
-                  <div class="auth">
-                    <div class="auth__wrap">
-                      <div class="auth__header">
-                        <section class="section-title_subtitle section-title_subtitle_auth">Авторизуйтесь</section>
+                <div class="flipper__back">
+                  <div class="welcome__title">
+                    <section class="section-title_subtitle section-title_subtitle_auth">Авторизуйтесь</section>
+                  </div>
+                  <div class="welcome__auth-form">
+                    <form class="form" action="#" method="post" id="auth-form">
+                      <div class="form__field">
+                        <input class="form__input form__input_login" type="text" placeholder="Логин" name="login">
+                        <div class="form__field-icon">
+                          <svg class="icon icon_auth">
+                            <use xlink:href="assets/images/icons/sprite.svg#login"></use>
+                          </svg>
+                        </div>
                       </div>
-                      <div class="auth__form">
-                        <form class="welcome-form" action="#" method="post">
-                          <div class="welcome-form__row">
-                            <div class="welcome-form__icon">
-                              <svg class="icon icon_auth">
-                                <use xlink:href="assets/images/icons/sprite.svg#login"></use>
-                              </svg>
-                            </div>
-                            <input class="welcome-form__input" type="text" placeholder="Логин" id="login" name="login">
-                          </div>
-                          <div class="welcome-form__row">
-                            <div class="welcome-form__icon">
-                              <svg class="icon icon_auth">
-                                <use xlink:href="assets/images/icons/sprite.svg#password"></use>
-                              </svg>
-                            </div>
-                            <input class="welcome-form__input" type="password" placeholder="Пароль" name="password">
-                          </div>
-                          <label class="welcome-form__check">
-                            <input class="welcome-form__input-check" type="checkbox" name="check" id="welcome-check" checked>
-                            <div class="welcome-form__check-fake">
+                      <div class="form__field">
+                        <input class="form__input form__input_login" type="password" placeholder="Пароль" name="password">
+                        <div class="form__field-icon">
+                          <svg class="icon icon_auth">
+                            <use xlink:href="assets/images/icons/sprite.svg#password"></use>
+                          </svg>
+                        </div>
+                      </div>
+                      <div class="form__line">
+                        <div class="form__checkbox">
+                          <label class="form__check-label">
+                            <input class="form__check-elem" type="checkbox" name="check" id="auth-check">
+                            <div class="form__check-fake">
                               <svg class="icon icon_check">
                                 <use xlink:href="assets/images/icons/sprite.svg#check"></use>
                               </svg>
                             </div>
-                            <div class="welcome-form__check-title">Я человек</div>
-                          </label><span class="welcome-form__radio-title">Вы точно не робот?</span>
-                          <div class="welcome-form__radio-wrap">
-                            <label class="welcome-form__radio">
-                              <input class="welcome-form__input-radio" type="radio" name="welcome-radio" checked>
-                              <div class="welcome-form__radio-fake"></div>
-                              <div class="welcome-form__radio-text">Да</div>
-                            </label>
-                            <label class="welcome-form__radio">
-                              <input class="welcome-form__input-radio" type="radio" name="welcome-radio">
-                              <div class="welcome-form__radio-fake"></div>
-                              <div class="welcome-form__radio-text">Не уверен</div>
-                            </label>
-                          </div>
-                        </form>
+                            <div class="form__check-title">Я человек</div>
+                          </label>
+                        </div>
                       </div>
-                    </div>
-                    <div class="form__buttons">
-                      <div class="btn btn_form btn_auth">На главную</div>
-                      <button class="btn btn_form" type="submit" form="welcome-form">Войти</button>
-                    </div>
+                      <div class="form__line-title">Вы точно не робот?</div>
+                      <div class="form__line">
+                        <div class="form__radio">
+                          <label class="form__radio-label">
+                            <input class="form__radio-elem" type="radio" name="welcome-radio">
+                            <div class="form__radio-fake"></div>
+                            <div class="form__radio-text">Да</div>
+                          </label>
+                        </div>
+                        <div class="form__radio">
+                          <label class="form__radio-label">
+                            <input class="form__radio-elem" type="radio" name="welcome-radio">
+                            <div class="form__radio-fake"></div>
+                            <div class="form__radio-text">Не уверен</div>
+                          </label>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="welcome__auth-buttons">
+                    <button class="btn btn_form btn_auth" id="btn-main">На главную</button>
+                    <button class="btn btn_form" form="auth-form" type="submit" id="btn-login">Войти</button>
                   </div>
                 </div>
               </div>

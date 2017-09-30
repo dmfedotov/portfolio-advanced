@@ -38,6 +38,10 @@ const paths = {
     src: 'src/images/**/*.{jpg,svg,png}',
     dest: 'docs/assets/images/'
   },
+  videos: {
+    src: 'src/videos/**/*.{mp4,webm}',
+    dest: 'docs/assets/videos/'
+  },
   icons: {
     src: 'src/images/icons/*.svg',
     dest: 'src/images/icons/'
@@ -91,6 +95,12 @@ function images() {
     .pipe(gulp.dest(paths.images.dest));
 }
 
+// перенос видео
+function videos() {
+  return gulp.src(paths.videos.src)
+    .pipe(gulp.dest(paths.videos.dest));
+}
+
 // перенос шрифтов
 function fonts() {
   return gulp.src(paths.fonts.src)
@@ -120,6 +130,7 @@ function watch() {
   gulp.watch(paths.styles.src, styles);
   gulp.watch(paths.templates.src, html);
   gulp.watch(paths.images.src, images);
+  gulp.watch(paths.videos.src, videos);
   gulp.watch(paths.fonts.src, fonts);
 }
 
@@ -160,12 +171,13 @@ function sprite() {
     .pipe(gulp.dest(paths.icons.dest));
 }
 
-// экспорт функциq для доступа из терминала
+// экспорт функций для доступа из терминала
 exports.clean = clean;
 exports.styles = styles;
 exports.scripts = scripts;
 exports.html = html;
 exports.images = images;
+exports.videos = videos;
 exports.watch = watch;
 exports.server = server;
 exports.fonts = fonts;
@@ -174,6 +186,6 @@ exports.sprite = sprite;
 // сборка и слежка
 gulp.task('default', gulp.series(
   clean,
-  gulp.parallel(styles, scripts, html, images, fonts),
+  gulp.parallel(styles, scripts, html, images, videos, fonts),
   gulp.parallel(watch, server)
 ));

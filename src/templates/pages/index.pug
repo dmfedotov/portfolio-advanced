@@ -5,55 +5,58 @@ block title
 
 block content
   main.content
-    section.welcome
-      .welcome__auth
+    section.welcome.parallax
+      +parallax()
+      .welcome__auth-btn
         a(href="#").btn.btn__auth Авторизоваться 
       .welcome__main
-        .flip-container
+        .welcome__flipper
           .flipper
-            .front
-              .person
+            .flipper__front
+              .welcome__person.person
                 .person__photo
                   img(class="person__photo-pic" src="assets/images/content/my-ava.jpg", alt="Фото автора блога")
                 .person__name Дмитрий Федотов
                 .person__desc Личный сайт веб разработчика 
-                .welcome__social
+              .welcome__social
                   +socialList("welcome", socials)         
-                .welcome__list
+              .welcome__buttons
                   +navList("nav__list_welcome", "welcome", navItems, 1)
-            .back
-              .auth
-                .auth__wrap
-                  .auth__header
-                    section.section-title_subtitle.section-title_subtitle_auth Авторизуйтесь
-                  .auth__form
-                    form.welcome-form(action="#" method="post")
-                      .welcome-form__row
-                        .welcome-form__icon
-                          +icon("auth", "login")
-                        input.welcome-form__input(type="text" placeholder="Логин" id="login" name="login")
-                      .welcome-form__row
-                        .welcome-form__icon
-                          +icon("auth", "password")
-                        input.welcome-form__input(type="password" placeholder="Пароль" name="password")
-                      label.welcome-form__check
-                        input.welcome-form__input-check(type="checkbox" name="check" id="welcome-check" checked)
-                        .welcome-form__check-fake
+            .flipper__back
+              .welcome__title
+                section.section-title_subtitle.section-title_subtitle_auth Авторизуйтесь
+              .welcome__auth-form
+                form.form(action="#" method="post" id="auth-form")
+                  .form__field
+                    input.form__input.form__input_login(type="text" placeholder="Логин"  name="login")
+                    .form__field-icon
+                      +icon("auth", "login")
+                  .form__field
+                    input.form__input.form__input_login(type="password" placeholder="Пароль" name="password")
+                    .form__field-icon
+                      +icon("auth", "password")
+                  .form__line
+                    .form__checkbox
+                      label.form__check-label
+                        input.form__check-elem(type="checkbox" name="check" id="auth-check")
+                        .form__check-fake
                           +icon("check", "check")
-                        .welcome-form__check-title Я человек
-                      span.welcome-form__radio-title Вы точно не робот?
-                      .welcome-form__radio-wrap
-                        label.welcome-form__radio
-                          input.welcome-form__input-radio(type="radio", name="welcome-radio" checked)
-                          .welcome-form__radio-fake
-                          .welcome-form__radio-text Да
-                        label.welcome-form__radio
-                          input.welcome-form__input-radio(type="radio", name="welcome-radio")
-                          .welcome-form__radio-fake
-                          .welcome-form__radio-text Не уверен
-                .form__buttons
-                  .btn.btn_form.btn_auth На главную
-                  button.btn.btn_form(type="submit" form="welcome-form") Войти
+                        .form__check-title Я человек
+                  .form__line-title Вы точно не робот?
+                  .form__line
+                    .form__radio
+                      label.form__radio-label
+                        input.form__radio-elem(type="radio", name="welcome-radio")
+                        .form__radio-fake
+                        .form__radio-text Да
+                    .form__radio
+                      label.form__radio-label
+                        input.form__radio-elem(type="radio", name="welcome-radio")
+                        .form__radio-fake
+                        .form__radio-text Не уверен
+              .welcome__auth-buttons
+                button.btn.btn_form.btn_auth(id="btn-main") На главную
+                button.btn.btn_form(form="auth-form" type="submit" id="btn-login") Войти
       .welcome-overlay      
   
   footer.footer.footer_welcome

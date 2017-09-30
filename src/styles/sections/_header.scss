@@ -6,8 +6,10 @@
   height: 100vh;
   padding-top: 100px;
 
-  background: url("../images/bg/header-bg.jpg") center top;
-  background-size: cover;
+  @include tablet {
+    background: url("../images/bg/welcome-bg.jpg") center;
+    background-size: cover;
+  }
 }
 
 .header_my-works {
@@ -18,6 +20,7 @@
   position: absolute;
   top: 30px;
   left: 30px;
+  z-index: 10;
 
 @include phone {
     top: 10px;
@@ -29,6 +32,7 @@
   position: absolute;
   top: 30px;
   right: 30px;
+  z-index: 30;
 
 @include phone {
     top: 10px;
@@ -104,7 +108,7 @@
 
 .header__content {
   position: relative;
-  z-index: 1;
+  z-index: 10;
 }
 
 .header__person {
@@ -125,6 +129,7 @@
 
 .header__bottom {
   position: relative;
+  z-index: 10;
 
   width: 100%;
   padding-top: 35px;

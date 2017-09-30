@@ -5,12 +5,13 @@ block title
 
 block content
   main.content
-    section.section.header.header_my-works
+    section.section.header.header_my-works.parallax
+      +parallax()
       .header__social
         +socialList("header", socials)
       .header__menu-button
-        a.menu(href="#")
-          +icon("menu", "hamburger")
+        a.nav-toggle(href="#")
+         span.nav-toggle__button
       .header__content
         .header__person
           .person
