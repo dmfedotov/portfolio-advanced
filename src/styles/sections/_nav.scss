@@ -171,15 +171,15 @@
   height: 0;
 }
 
-// .nav-toggle__button_close::before {
-//   background: $white-color;
-//   transform: rotate(-45deg) translate(-11px, 11px);
-// }
+.nav-toggle__button_close::before {
+  background: $white-color;
+  transform: rotate(-45deg) translate(-11px, 11px);
+}
 
-// .nav-toggle__button_close::after {
-//   background: $white-color;
-//   transform: rotate(45deg) translate(-11px, -11px);
-// }
+.nav-toggle__button_close::after {
+  background: $white-color;
+  transform: rotate(45deg) translate(-11px, -11px);
+}
 
 .nav__list_fullscreen {
   display: none;

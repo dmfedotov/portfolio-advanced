@@ -6,10 +6,8 @@
   height: 100vh;
   padding-top: 100px;
 
-  @include tablet {
-    background: url("../images/bg/welcome-bg.jpg") center;
-    background-size: cover;
-  }
+  background: url("../images/bg/header-bg.jpg") center;
+  background-size: cover;
 }
 
 .header_my-works {
