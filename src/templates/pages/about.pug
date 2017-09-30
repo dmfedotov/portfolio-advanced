@@ -68,7 +68,7 @@ block content
             .skills__section
               +skills(skillsList)
     
-    section.section.map
+    section.section.map#yandex-map
       .map__contacts
         .contacts
           .contacts__header
@@ -105,3 +105,6 @@ block content
             li.footer__contacts-item Новосибирск, ул. Инская, д.4        
     .footer__bottom
       .footer__copyright © Дмитрий Федотов | создано  LoftSchool | 2017
+
+block scripts
+  script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript")

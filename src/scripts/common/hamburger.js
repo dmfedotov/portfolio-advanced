@@ -30,4 +30,15 @@ export default (function () {
 
   });
 
+  $(window).keydown(e => {
+    if (e.keyCode === 27) {
+      if (fsNav.hasClass('fullscreen-nav')) {
+        fsNav.removeClass('fullscreen-nav_active');
+        burgerToggleBtn.removeClass('nav-toggle__button_close');
+        navItems.removeClass('nav__item_fullscreen_active');
+        $('body').css('overflow', 'initial');
+      }
+    }
+  });
+
 }());
