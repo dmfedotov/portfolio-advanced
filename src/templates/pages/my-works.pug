@@ -12,6 +12,8 @@ block content
       .header__menu-button
         a.nav-toggle(href="#")
          span.nav-toggle__button
+      nav.fullscreen-nav
+        +navList("nav__list_fullscreen", "fullscreen", navItems)
       .header__content
         .header__person
           .person
@@ -130,7 +132,8 @@ block content
           Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. 
       .footer__col.footer__col_nav
         .footer__nav
-          +navList("nav__list_footer", "footer", navItems)
+          nav.nav
+            +navList("nav__list_footer", "footer", navItems)
         .footer__social
           +socialList("footer", socials)
       .footer__col.footer__col_contacts

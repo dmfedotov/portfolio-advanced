@@ -115,10 +115,18 @@
 .nav-toggle {
   &:hover .nav-toggle__button_close::before {
     transform: rotate(-45deg) translate(-11px, 11px);
+
+@include phone {
+      transform: rotate(-45deg) translate(-7px, 7px);
+    }
   }
 
   &:hover .nav-toggle__button_close::after {
     transform: rotate(45deg) translate(-11px, -11px);
+
+@include phone {
+      transform: rotate(45deg) translate(-7px, -7px);
+    }
   }
 }
 
@@ -163,58 +171,82 @@
   height: 0;
 }
 
-.nav-toggle__button_close::before {
-  background: $white-color;
-  transform: rotate(-45deg) translate(-11px, 11px);
-}
+// .nav-toggle__button_close::before {
+//   background: $white-color;
+//   transform: rotate(-45deg) translate(-11px, 11px);
+// }
 
-.nav-toggle__button_close::after {
-  background: $white-color;
-  transform: rotate(45deg) translate(-11px, -11px);
-}
+// .nav-toggle__button_close::after {
+//   background: $white-color;
+//   transform: rotate(45deg) translate(-11px, -11px);
+// }
 
 .nav__list_fullscreen {
-  z-index: 30;
-
+  display: none;
   flex-direction: column;
 
-  &::before,
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 15;
-
-    display: block;
-    height: 100%;
-
-    background: rgba(#183669, 0.87);
-
-    transition: 0.7;
-  }
-}
-
-.nav__list_fullscreen::after {
-  right: 0;
-  left: initial;
-}
-
-.nav__list_fullscreen_active {
-  &::before,
-  &::after {
-    width: 50%;
-  }
+  transition-delay: none;
 }
 
 .nav__item_fullscreen {
+  position: relative;
+  left: -500%;
+
+  display: none;
   margin-bottom: 60px;
 
   text-align: center;
 }
 
+.nav__item_fullscreen_active {
+  display: block;
+
+  animation: nav-burger-item 1s forwards;
+}
+
+@keyframes nav-burger-item {
+  0% {
+    left: -500%;
+  }
+  100% {
+    left: 0;
+  }
+}
+
 .nav__link_fullscreen {
+  position: relative;
+
   font-size: 63px;
   font-family: $header-font;
   text-transform: uppercase;
+
+@include tablet {
+    font-size: 49px;
+  }
+
+@include phone {
+    font-size: 35px;
+  }
+
+  &:hover {
+    &::after {
+      background: $white-color;
+
+      transition: 0.4s;
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+
+    display: block;
+    width: 90px;
+    height: 3px;
+
+    background: transparent;
+    transform: translateX(-50%);
+  }
 }

@@ -1,4 +1,4 @@
-export const flipper = (function () {
+export default (function () {
   $(document).ready(function () {
 
     const btn = $('.welcome__auth-btn');

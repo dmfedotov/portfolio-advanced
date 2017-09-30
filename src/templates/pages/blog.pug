@@ -41,7 +41,8 @@ block content
             polygon(points="0,100 0,85 500,0 500,100")
       .blog__left
         .blog__nav
-          +navList("nav__list_blog", "blog", blogNavItems)
+          .nav
+            +navList("nav__list_blog", "blog", blogNavItems)
       .blog__right
         .blog__content
           article.blog__article
@@ -68,7 +69,8 @@ block content
           Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. 
       .footer__col.footer__col_nav
         .footer__nav
-          +navList("nav__list_footer", "footer", navItems)
+          nav.nav
+            +navList("nav__list_footer", "footer", navItems)
         .footer__social
           +socialList("footer", socials)
       .footer__col.footer__col_contacts

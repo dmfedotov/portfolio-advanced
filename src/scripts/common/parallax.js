@@ -1,4 +1,4 @@
-export const parallax = (function () {
+export default (function () {
   const parallaxContainer = $('.parallax');
   const layers = $('.parallax__layer');
 
