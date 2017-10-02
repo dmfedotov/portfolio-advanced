@@ -107,9 +107,12 @@ block content
                 section.section-title_subtitle.section-title_subtitle_white Связаться со мной
               .feedback__form
                 form.form(action="#" method="post" id="feedback-form")
-                  input.form__input(type="text" placeholder="Ваше имя" id="name")
-                  input.form__input(type="email" placeholder="Ваш email" id="email")
-                  textarea.form__input(placeholder="Ваше сообщение" id="message" rows="6")
+                  .form__field
+                    input.form__input(type="text" placeholder="Ваше имя" id="name")
+                  .form__field 
+                    input.form__input(type="email" placeholder="Ваш email" id="email")
+                  .form__field
+                    textarea.form__input(placeholder="Ваше сообщение" id="message" rows="6")
             .form__buttons
               button.btn.btn_form(type="submit" form="feedback-form") Отправить
               button.btn.btn_form.btn_bg_transparent(type="reset" form="feedback-form") Очистить   

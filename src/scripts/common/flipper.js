@@ -5,6 +5,7 @@ export default (function () {
     const flipper = $('.flipper');
     const btnBack = $('#btn-main');
     const overlay = $('.welcome-overlay');
+    const form = document.querySelector('#auth-form');
 
     btn.click(e => {
       e.preventDefault();
@@ -16,6 +17,7 @@ export default (function () {
     btnBack.click(e => {
       flipper.toggleClass('flipper_back');
       btn.css('opacity', '1');
+      form.reset();
     });
 
     $(window).keydown(e => {
@@ -23,6 +25,7 @@ export default (function () {
         if (flipper.hasClass('flipper_back')) {
           flipper.removeClass('flipper_back');
           btn.css('opacity', '1');
+          form.reset();
         }
       }
     });
@@ -31,6 +34,7 @@ export default (function () {
       if (flipper.hasClass('flipper_back')) {
         flipper.removeClass('flipper_back');
         btn.css('opacity', '1');
+        form.reset();
       }
     });
 
