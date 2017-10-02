@@ -1,4 +1,4 @@
-export const initMap = (function () {
+$(function () {
   ymaps.ready(init);
 
   const map;
@@ -11,9 +11,9 @@ export const initMap = (function () {
       zoom: 16,
     });
 
-    // map.behaviors.disable([
-    //   'scrollZoom',
-    // ]);
+    map.behaviors.disable([
+      'scrollZoom',
+    ]);
 
     // map.controls
     // .remove('geolocationControl')
@@ -28,4 +28,4 @@ export const initMap = (function () {
     // myPin.add(myPlacemark);
     // map.geoObjects.add(myPin);
   }
-})();
+});

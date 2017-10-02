@@ -1,10 +1,11 @@
 import {flipper} from './common/flipper';
 import {parallax} from './common/parallax';
 import {hamburger} from './common/hamburger';
-import {initMap} from './common/yandex-map';
+import {initMap} from './common/google-map';
 
-initMap();
-
+if (document.querySelector('#google-map')) {
+  initMap();
+}
 
 
 
