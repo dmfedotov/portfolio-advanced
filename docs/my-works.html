@@ -218,13 +218,16 @@
                   <div class="feedback__form">
                     <form class="form" action="#" method="post" id="feedback-form">
                       <div class="form__field">
-                        <input class="form__input" type="text" placeholder="Ваше имя" id="name">
+                        <input class="form__input" type="text" placeholder="Ваше имя" name="name">
+                        <div class="form-tooltip form-tooltip_password"><span class="form-tooltip__text">Необходимо ввести имя</span></div>
                       </div>
                       <div class="form__field"> 
-                        <input class="form__input" type="email" placeholder="Ваш email" id="email">
+                        <input class="form__input" type="email" placeholder="Ваш email" name="email">
+                        <div class="form-tooltip form-tooltip_password"><span class="form-tooltip__text">Необходимо ввести почту</span></div>
                       </div>
                       <div class="form__field">
-                        <textarea class="form__input" placeholder="Ваше сообщение" id="message" rows="6"></textarea>
+                        <textarea class="form__input" placeholder="Ваше сообщение" name="message" rows="6"></textarea>
+                        <div class="form-tooltip form-tooltip_password"><span class="form-tooltip__text">Необходимо ввести сообщение</span></div>
                       </div>
                     </form>
                   </div>

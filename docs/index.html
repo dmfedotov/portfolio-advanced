@@ -65,6 +65,7 @@
                             <use xlink:href="assets/images/icons/sprite.svg#login"></use>
                           </svg>
                         </div>
+                        <div class="form-tooltip form-tooltip_login"><span class="form-tooltip__text">Вы не ввели логин</span></div>
                       </div>
                       <div class="form__field">
                         <input class="form__input form__input_login" type="password" placeholder="Пароль" name="password">
@@ -73,6 +74,7 @@
                             <use xlink:href="assets/images/icons/sprite.svg#password"></use>
                           </svg>
                         </div>
+                        <div class="form-tooltip form-tooltip_password"><span class="form-tooltip__text">Вы не ввели пароль</span></div>
                       </div>
                       <div class="form__line">
                         <div class="form__checkbox">
@@ -83,11 +85,14 @@
                                 <use xlink:href="assets/images/icons/sprite.svg#check"></use>
                               </svg>
                             </div>
-                            <div class="form__check-title">Я человек</div>
+                            <div class="form__check-title">Я человек
+                              <div class="form-tooltip form-tooltip_right form-tooltip_check"><span class="form-tooltip__text">Роботов не пускаем</span></div>
+                            </div>
                           </label>
                         </div>
                       </div>
-                      <div class="form__line-title">Вы точно не робот?</div>
+                      <div class="form__line-title"><span class="form__line-title-text">Вы точно не робот?
+                          <div class="form-tooltip form-tooltip_right form-tooltip_radio"><span class="form-tooltip__text">Роботов не пускаем</span></div></span></div>
                       <div class="form__line">
                         <div class="form__radio">
                           <label class="form__radio-label">

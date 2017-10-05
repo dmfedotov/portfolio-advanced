@@ -108,11 +108,17 @@ block content
               .feedback__form
                 form.form(action="#" method="post" id="feedback-form")
                   .form__field
-                    input.form__input(type="text" placeholder="Ваше имя" id="name")
+                    input.form__input(type="text" placeholder="Ваше имя" name="name")
+                    .form-tooltip.form-tooltip_password
+                      span.form-tooltip__text Необходимо ввести имя
                   .form__field 
-                    input.form__input(type="email" placeholder="Ваш email" id="email")
+                    input.form__input(type="email" placeholder="Ваш email" name="email")
+                    .form-tooltip.form-tooltip_password
+                      span.form-tooltip__text Необходимо ввести почту
                   .form__field
-                    textarea.form__input(placeholder="Ваше сообщение" id="message" rows="6")
+                    textarea.form__input(placeholder="Ваше сообщение" name="message" rows="6")
+                    .form-tooltip.form-tooltip_password
+                      span.form-tooltip__text Необходимо ввести сообщение
             .form__buttons
               button.btn.btn_form(type="submit" form="feedback-form") Отправить
               button.btn.btn_form.btn_bg_transparent(type="reset" form="feedback-form") Очистить   
