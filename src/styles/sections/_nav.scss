@@ -57,11 +57,21 @@
 
   border-right: solid 3px transparent;
 
-  &:hover {
-    font-weight: 500;
-    color: $accent-color-darken;
+@include tablet {
+    color: rgba($white-color, 0.7);
+  }
+}
 
-    border-right-color: $accent-color-darken;
+.nav__link_blog_active {
+  font-weight: 500;
+  color: $accent-color-darken;
+
+  border-right-color: $accent-color-darken;
+
+@include tablet {
+    color: $white-color;
+
+    border-right: none;
   }
 }
 

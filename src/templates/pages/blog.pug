@@ -4,6 +4,10 @@ block title
   title Блог
 
 block content
+  .preloader
+    .preloader__container
+      .preloader__icon
+        +preloaderIcon()
   main.content
     section.section.header.header_blog
       .header__social
@@ -24,7 +28,7 @@ block content
         .header__content-bg_blog
           +headerContentBg("blog")
       .header__scroll.scroll
-        a.scroll__link(href="#")
+        a.scroll__link(href="#")#scroll-down
           .scroll__icon
             +icon("fill_white", "portf_arrow_down")
             
@@ -42,22 +46,27 @@ block content
         .blog__nav
           .nav
             +navList("nav__list_blog", "blog", blogNavItems)
+        button.blog__btn-sidebar-open
       .blog__right
         .blog__content
-          article.blog__article
-            +blogArticle("Самое важное в SASS", "4 сентября 2017")
+          article.blog__article(id="samoe-vajnoe-v-sass")
+            .blog__article-title Самое важное в SASS
+            .blog__article-date 4 сентября 2017
             .blog__article-content
               include:markdown-it ../../articles/about-sass.md
-          article.blog__article
-            +blogArticle("Приёмы в вёрстке, без которых не обходится ни один сайт", "21 августа 2017")
+          article.blog__article(id="priyomy-v-vyorstke-bez-kotoryh-ne-obhoditsya-ni-odin-sajt")
+            .blog__article-title Приёмы в вёрстке, без которых не обходится ни один сайт
+            .blog__article-date 21 августа 2017
             .blog__article-content
               include:markdown-it ../../articles/best-practices.md
-          article.blog__article
-            +blogArticle("Самый необходимый набор Gulp плагинов", "11 мая 2017")
+          article.blog__article(id="samyj-neobhodimyj-nabor-gulp-plaginov")
+            .blog__article-title Самый необходимый набор Gulp плагинов
+            .blog__article-date 11 мая 2017
             .blog__article-content
               include:markdown-it ../../articles/gulp-plugins.md
-          article.blog__article
-            +blogArticle("Почему я выбрал Jade", "3 апреля 2017")
+          article.blog__article(id="pochemu-ya-vybral-Jade")
+            .blog__article-title Почему я выбрал Jade
+            .blog__article-date 3 апреля 2017
             .blog__article-content
               include:markdown-it ../../articles/jade.md
 

@@ -4,8 +4,11 @@ import {hamburger} from './common/hamburger';
 import {initMap} from './common/google-map';
 import Validation from './common/validation';
 import getData from './common/getData';
+import Preloader from './common/preloader';
+import Sidebar from './common/sidebar';
+import ScrollArrow from './common/scroll-arrow';
 
-
+// Валидация форм
 if ($('#auth-form')) { 
   var authForm = $('#auth-form');
   Validation.init(authForm);
@@ -38,8 +41,29 @@ if (!document.querySelector('#auth-form')) {
   });
 }
 
+// Прелоадер
+Preloader.init();
 
+/*** Скрол к секциям **/
+// Страница - Блог
+if (document.querySelector('.blog')) {
+  const firstArticle = $('.blog__article').first();
+  ScrollArrow.bottom(firstArticle);
+} 
 
+// Страница - Мои работы
+if (document.querySelector('.portfolio')) {
+  const portfolioSection = $('#portfolio');
+  const headerSection = $('.header_my-works');
+  ScrollArrow.bottom(portfolioSection);
+  ScrollArrow.top();
+}
+
+// Страница - Обо мне
+if (document.querySelector('.about')) {
+  const aboutSection = $('#about');
+  ScrollArrow.bottom(aboutSection);
+}
 
 if (document.querySelector('#google-map')) {
   initMap();

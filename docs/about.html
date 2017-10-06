@@ -9,6 +9,17 @@
   </head>
   <body>
     <div class="wrapper">
+      <div class="preloader">
+        <div class="preloader__container">
+          <div class="preloader__icon">
+            <svg class="icon preloader-elem" xmlns="http://www.w3.org/2000/svg" viewbox="-14 -10 80 92">
+              <text class="preloader-elem__text" transform="matrix(1 0 0 1 5.772 45.0889)" font-family="'ArialMT'" font-size="24" text-anchor="middle" x="20" y="0">0</text>
+              <circle class="preloader-elem__inner" stroke-width="2.5864" stroke-miterlimit="10" cx="26.293" cy="37.438" r="25" transform="rotate(-90 26.293 37.438)"></circle>
+              <circle class="preloader-elem__outer" cx="26.293" cy="4.5" r="4.5"></circle>
+            </svg>
+          </div>
+        </div>
+      </div>
       <main class="content">
         <section class="section header">
           <div class="header__social">
@@ -67,14 +78,14 @@
               </svg>
             </div>
           </div>
-          <div class="header__scroll scroll"><a class="scroll__link" href="#">
+          <div class="header__scroll scroll"><a class="scroll__link" href="#" id="scroll-down">
               <div class="scroll__icon">
                 <svg class="icon icon_fill_white">
                   <use xlink:href="assets/images/icons/sprite.svg#portf_arrow_down"></use>
                 </svg>
               </div></a></div>
         </section>
-        <section class="section about">
+        <section class="section about" id="about">
           <section class="section__triangle section__triangle_left">
             <div class="triangle triangle_color_light-beige">
               <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 500 100" preserveaspectratio="none">

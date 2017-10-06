@@ -4,6 +4,10 @@ block title
  title Обо мне
 
 block content
+  .preloader
+    .preloader__container
+      .preloader__icon
+        +preloaderIcon()
   main.content
     section.section.header
       .header__social
@@ -23,14 +27,14 @@ block content
         .header__content-bg_about
           +headerContentBg("about")
       .header__scroll.scroll
-        a.scroll__link(href="#")
+        a.scroll__link(href="#")#scroll-down
           .scroll__icon
             +icon("fill_white", "portf_arrow_down")
 
     
     
 
-    section.section.about
+    section.section.about#about
       section.section__triangle.section__triangle_left
           .triangle.triangle_color_light-beige
             svg(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 500 100" preserveaspectratio="none")

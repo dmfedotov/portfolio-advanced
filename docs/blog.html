@@ -9,6 +9,17 @@
   </head>
   <body>
     <div class="wrapper">
+      <div class="preloader">
+        <div class="preloader__container">
+          <div class="preloader__icon">
+            <svg class="icon preloader-elem" xmlns="http://www.w3.org/2000/svg" viewbox="-14 -10 80 92">
+              <text class="preloader-elem__text" transform="matrix(1 0 0 1 5.772 45.0889)" font-family="'ArialMT'" font-size="24" text-anchor="middle" x="20" y="0">0</text>
+              <circle class="preloader-elem__inner" stroke-width="2.5864" stroke-miterlimit="10" cx="26.293" cy="37.438" r="25" transform="rotate(-90 26.293 37.438)"></circle>
+              <circle class="preloader-elem__outer" cx="26.293" cy="4.5" r="4.5"></circle>
+            </svg>
+          </div>
+        </div>
+      </div>
       <main class="content">
         <section class="section header header_blog">
           <div class="header__social">
@@ -69,7 +80,7 @@
               </svg>
             </div>
           </div>
-          <div class="header__scroll scroll"><a class="scroll__link" href="#">
+          <div class="header__scroll scroll"><a class="scroll__link" href="#" id="scroll-down">
               <div class="scroll__icon">
                 <svg class="icon icon_fill_white">
                   <use xlink:href="assets/images/icons/sprite.svg#portf_arrow_down"></use>
@@ -95,17 +106,18 @@
             <div class="blog__nav">
               <div class="nav">
                 <ul class="nav__list nav__list_blog">
-                  <li class="nav__item nav__item_blog"><a class="nav__link nav__link_blog" href="#">Самое важное в SASS</a></li>
-                  <li class="nav__item nav__item_blog"><a class="nav__link nav__link_blog" href="#">Приёмы в вёрстке, без которых не обходится ни один сайт</a></li>
-                  <li class="nav__item nav__item_blog"><a class="nav__link nav__link_blog" href="#">Самый необходимый набор Gulp плагинов</a></li>
-                  <li class="nav__item nav__item_blog"><a class="nav__link nav__link_blog" href="#">Почему я выбрал Jade</a></li>
+                  <li class="nav__item nav__item_blog"><a class="nav__link nav__link_blog" href="#samoe-vajnoe-v-sass">Самое важное в SASS</a></li>
+                  <li class="nav__item nav__item_blog"><a class="nav__link nav__link_blog" href="#priyomy-v-vyorstke-bez-kotoryh-ne-obhoditsya-ni-odin-sajt">Приёмы в вёрстке, без которых не обходится ни один сайт</a></li>
+                  <li class="nav__item nav__item_blog"><a class="nav__link nav__link_blog" href="#samyj-neobhodimyj-nabor-gulp-plaginov">Самый необходимый набор Gulp плагинов</a></li>
+                  <li class="nav__item nav__item_blog"><a class="nav__link nav__link_blog" href="#pochemu-ya-vybral-Jade">Почему я выбрал Jade</a></li>
                 </ul>
               </div>
             </div>
+            <button class="blog__btn-sidebar-open"></button>
           </div>
           <div class="blog__right">
             <div class="blog__content">
-              <article class="blog__article">
+              <article class="blog__article" id="samoe-vajnoe-v-sass">
                 <div class="blog__article-title">Самое важное в SASS</div>
                 <div class="blog__article-date">4 сентября 2017</div>
                 <div class="blog__article-content"><p>Таким образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке направлений прогрессивного развития. Разнообразный и богатый опыт новая модель организационной деятельности играет важную роль в формировании новых предложений. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия.</p>
@@ -113,7 +125,7 @@
 
                 </div>
               </article>
-              <article class="blog__article">
+              <article class="blog__article" id="priyomy-v-vyorstke-bez-kotoryh-ne-obhoditsya-ni-odin-sajt">
                 <div class="blog__article-title">Приёмы в вёрстке, без которых не обходится ни один сайт</div>
                 <div class="blog__article-date">21 августа 2017</div>
                 <div class="blog__article-content"><p>Таким образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке направлений прогрессивного развития. Разнообразный и богатый опыт новая модель организационной деятельности играет важную роль в формировании новых предложений. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия.
@@ -121,7 +133,7 @@
 
                 </div>
               </article>
-              <article class="blog__article">
+              <article class="blog__article" id="samyj-neobhodimyj-nabor-gulp-plaginov">
                 <div class="blog__article-title">Самый необходимый набор Gulp плагинов</div>
                 <div class="blog__article-date">11 мая 2017</div>
                 <div class="blog__article-content"><p>Таким образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке направлений прогрессивного развития. Разнообразный и богатый опыт новая модель организационной деятельности играет важную роль в формировании новых предложений. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия.</p>
@@ -129,7 +141,7 @@
 
                 </div>
               </article>
-              <article class="blog__article">
+              <article class="blog__article" id="pochemu-ya-vybral-Jade">
                 <div class="blog__article-title">Почему я выбрал Jade</div>
                 <div class="blog__article-date">3 апреля 2017</div>
                 <div class="blog__article-content"><p>Таким образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке направлений прогрессивного развития. Разнообразный и богатый опыт новая модель организационной деятельности играет важную роль в формировании новых предложений. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия.</p>

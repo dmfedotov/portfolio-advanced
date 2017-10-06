@@ -5,8 +5,9 @@
   height: 100vh;
   min-height: 650px;
 
-  @include tablet {
-    background: url("../images/bg/header-bg.jpg") center;
+@include tablet {
+    background-image: url("../images/bg/header-bg.jpg");
+    background-position: center;
     background-size: cover;
   }
 }
@@ -18,6 +19,7 @@
   z-index: 10;
 
   transition: all 0.4s;
+
 @include laptop {
     right: 20px;
   }
