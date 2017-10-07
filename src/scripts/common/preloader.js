@@ -1,55 +1,69 @@
 export default (function () {
-  const _preloader = $('.preloader');
-  var _persentsTotal = 0;
 
-  var _imagesPath = $('*').map(function (index, elem) {
-    var _background = $(elem).css('background-image');
-    var _path = '';
-    var _isImage = $(elem).is('img');
+  // Переменные с которыми будем работать
+  const _preloader = document.querySelector('.preloader');
+  const _preloaderText = _preloader.querySelector('.preloader-elem__text');
+  const _preloaderCircle = _preloader.querySelectorAll('.preloader-elem__inner');
+  const _images = document.images;
+  const _imagesCount = _images.length; // кол-во картинок на странице
+  let _imagesLoaded = 0; // кол-во загруженных картинок, изначально 0
 
-    if (_background != 'none') {
-      _path = _background.replace('url("', '').replace('")', '');
-    }
 
-    if (_isImage) {
-      _path = $(elem).attr('src');
-    }
-
-    if (_path) return _path;
-  });
-
-  var _setPersents = function (total, current) { 
-
-    var _persents = Math.ceil(current / total * 100);
-    $('.preloader-elem__text').text(_persents);
-    if (_persents >= 100) {
-      _preloader.addClass('preloader_hide');
-    }
-  };
-
-  var _loadImages = function (images) {
-    if (!images.length) {
-      _preloader.addClass('preloader_hide');
-    }
-
-    images.forEach(function (img, index, images) {
-      var _copyImages = $('<img>', {
-        attr: {
-          src: img,
-        },
-      });
-
-      _copyImages.on('load', function () {
-        _persentsTotal++;
-        _setPersents(images.length, _persentsTotal);
-      });
+  // Обработка прелоадера
+  const _preloaderLoad = () => {
+    // После загрузки картинки, увеличиваем общий счетчик
+    _imagesLoaded++;
+    // Процент загрузки, который будет выводиться в прелодаер
+    let _percent = Math.round((100 / _imagesCount) * _imagesLoaded);
+    _preloaderText.innerHTML = _percent + '%';
+    // Считаем значение strokDasharray элемента и в соответствии с выше полученным процентом
+    // увеличиваем это значение - иначе говоря рисуем процесс загрузки
+    _preloaderCircle.forEach((element) => {
+      let _dasharrayLenght = element.getAttribute('r') * 2 * Math.PI;
+      setTimeout(() => {
+        element.style.strokeDasharray = _percent / 100 * _dasharrayLenght + ', ' + _dasharrayLenght;
+      }, 500);
     });
+
+    // Если кол-во загруженных картинок совпадает с общим кол-вом на странице, скрываем прелоадер
+    if (_imagesLoaded >= _imagesCount) {
+      // Задержка в 1.5 секунды, чтобы при быстрой загрузке сразу не пропадал
+      setTimeout(() => {
+        _preloader.classList.add('preloader_hide');
+      }, 1500);
+    }
   };
 
-  return {
-    init: function () {
-      var imgs = _imagesPath.toArray();
-      _loadImages(imgs);
-    },
+
+  // Основная функция
+  const _imgLoading = () => {
+    // Получаем пути всех картинок в переборе
+    for (let i = 0; i < _imagesCount; i++) {
+      let src = _images[i].src;
+      // Возвращает промис, который создает новую картинку
+      // В параметр source передается адрес картинки
+      function _loadImage (source) {
+        return new Promise((resolve, reject) => {
+          let _image = new Image();
+          _image.onload = resolve;
+          _image.onerror = reject;
+          _image.src = source;
+        });
+      }
+
+      // Обработка промиса
+      const _imagePromise = _loadImage(src);
+      _imagePromise
+        .then(() => _preloaderLoad())
+        .catch(() => console.error('ERROR: Картинка по пути ' + src + ' не загружена ☹'));
+    }
   };
+
+
+  /// API ///
+  // init - запуск прелоадера
+  return {
+    init: _imgLoading,
+  };
+
 }());

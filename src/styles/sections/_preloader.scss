@@ -16,7 +16,7 @@
   background-position: center center;
   background-size: cover;
 
-  transition: opacity 0.3s, z-index 0.3s;
+  transition: opacity 1s, z-index 1s;
 }
 
 .preloader_hide {
@@ -35,13 +35,19 @@
 }
 
 .preloader-elem__inner {
-  transform-origin: 26px 37px;
+  transform-origin: 50% 50%;
 
-  animation: spin 1s linear infinite, stroke 2s linear infinite, ;
+  animation: spin 1s linear infinite;
 
   fill: none;
   stroke: $white-color;
-  stroke-dasharray: 0 157.075;
+  stroke-width: 4px;
+  stroke-dasharray: 10 158;
+}
+
+.preloader-elem__text {
+  font-size: 20px;
+  font-family: $header-font;
 }
 
 .preloader-elem__outer {
@@ -50,16 +56,6 @@
   animation: spinOuter cubic-bezier(1,0,0.25,1) 2s infinite;
   animation-delay: 0.5s;
 } 
-
-@keyframes stroke {
-  50% {
-    stroke-dasharray: 157.075, 0;
-    stroke-dashoffset: 0;
-  }
-  100% {
-    stroke-dashoffset: -120;
-  }
-}
 
 @keyframes spin {
   0% {

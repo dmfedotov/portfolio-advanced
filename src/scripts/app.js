@@ -8,11 +8,10 @@ import Preloader from './common/preloader';
 import Sidebar from './common/sidebar';
 import ScrollArrow from './common/scroll-arrow';
 
-// Валидация форм
+/*** Валидация форм **/
 if ($('#auth-form')) { 
   var authForm = $('#auth-form');
   Validation.init(authForm);
-  Validation.clearError(authForm);
 
   authForm.submit(() => {
     if(Validation.result()) {
@@ -28,7 +27,6 @@ if ($('#auth-form')) {
 if (!document.querySelector('#auth-form')) { 
   var feedbackForm = $('#feedback-form');
   Validation.init(feedbackForm);
-  Validation.clearError(feedbackForm);
 
   feedbackForm.submit(() => {
     if(Validation.result()) {
@@ -41,8 +39,9 @@ if (!document.querySelector('#auth-form')) {
   });
 }
 
-// Прелоадер
+/*** Прелоадер **/
 Preloader.init();
+
 
 /*** Скрол к секциям **/
 // Страница - Блог
@@ -65,6 +64,8 @@ if (document.querySelector('.about')) {
   ScrollArrow.bottom(aboutSection);
 }
 
+
+/*** Google Map **/
 if (document.querySelector('#google-map')) {
   initMap();
 }
