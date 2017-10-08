@@ -3,6 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  min-height: 650px;
   height: 100vh;
   padding-top: 100px;
 
@@ -13,11 +14,6 @@
 
 .header_my-works {
   justify-content: space-between;
-}
-
-.header_blog {
-  height: initial;
-  min-height: 450px;
 }
 
 .header__social {
@@ -129,11 +125,6 @@
 
 .header_blog .header__scroll {
   z-index: 40;
-
-  display: none;
-@include tablet {
-    display: block;
-  }
 }
 
 .header__scroll_my-works {

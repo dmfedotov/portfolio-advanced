@@ -48,4 +48,8 @@
   z-index: 30;
 
   display: block;
+
+  @include footer__col-layout {
+    transform: translateY(-14%);
+  }
 }

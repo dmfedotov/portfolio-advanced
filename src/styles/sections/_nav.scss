@@ -57,9 +57,19 @@
 
   border-right: solid 3px transparent;
 
-@include tablet {
-    color: rgba($white-color, 0.7);
+  
+  &:hover {
+    font-weight: 500;
+    color: #083c96;
   }
+  
+ @include tablet {
+    color: rgba($white-color, 0.7);
+    &:hover {
+      color: $white-color;
+    }
+  }
+
 }
 
 .nav__link_blog_active {
@@ -206,6 +216,10 @@
   margin-bottom: 60px;
 
   text-align: center;
+
+@include footer__col-layout {
+    margin-bottom: 30px;
+  }
 }
 
 .nav__item_fullscreen_active {
