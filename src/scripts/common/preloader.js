@@ -13,12 +13,12 @@ export default (function () {
   const _preloaderLoad = () => {
     // После загрузки картинки, увеличиваем общий счетчик
     _imagesLoaded++;
-    // Процент загрузки, который будет выводиться в прелодаер
+
     let _percent = Math.round((100 / _imagesCount) * _imagesLoaded);
     _preloaderText.innerHTML = _percent + '%';
     // Считаем значение strokDasharray элемента и в соответствии с выше полученным процентом
     // увеличиваем это значение - иначе говоря рисуем процесс загрузки
-    _preloaderCircle.forEach((element) => {
+    [].forEach.call(_preloaderCircle, function (element) {
       let _dasharrayLenght = element.getAttribute('r') * 2 * Math.PI;
       setTimeout(() => {
         element.style.strokeDasharray = _percent / 100 * _dasharrayLenght + ', ' + _dasharrayLenght;
@@ -26,10 +26,9 @@ export default (function () {
       console.log('загружено после выполнения _preloaderLoad: ', _imagesLoaded);
     });
 
-    // Если кол-во загруженных картинок совпадает с общим кол-вом на странице, скрываем прелоадер
+    // Cкрываем прелоадер
     if (_imagesLoaded >= _imagesCount) {
       console.log('все картинки загружены. отключаем прелодаер');
-      // Задержка в 1.5 секунды, чтобы при быстрой загрузке сразу не пропадал
       setTimeout(() => {
         _preloader.classList.add('preloader_hide');
       }, 1500);
@@ -56,16 +55,11 @@ export default (function () {
         });
       };
 
-
       // Обработка промиса
-      _loadImage(src)
-        .then(() => {
-          console.log('загружено до _preloaderLoad: ', _imagesLoaded);
-          _preloaderLoad();
-        },
-        () => {
-          console.error('ERROR: Картинка по пути ' + src + ' не загружена ☹');
-        });
+      const _imagePromise = _loadImage(src);
+      _imagePromise
+        .then(() => _preloaderLoad())
+        .catch(() => console.error('ERROR: Картинка по пути ' + src + ' не загружена ☹'));
     }
   };
 
