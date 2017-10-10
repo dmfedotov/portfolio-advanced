@@ -113,6 +113,7 @@ export default (function () {
 
   // Проверка, что пользователь не робот
   function _onRobotVariant(elem) {
+    const _radioYes = $('#auth-radio-yes');
     elem.click(() => {
       // По клику на radio "Да", удаляется класс ошибки
       if (elem.attr('id') == 'auth-radio-yes') {
@@ -123,11 +124,20 @@ export default (function () {
     });
 
     // Проверки
-    if (!elem.is(':checked')
-               ||
-        elem.attr('id') == 'auth-radio-no' && elem.is(':checked')) {
+    if (elem.attr('id') == 'auth-radio-yes' && !elem.is(':checked')) {
       $('.form').find('.form__line-title').addClass('form-error');
       return false;
+
+    } else if (elem.attr('id') == 'auth-radio-no' && elem.is(':checked')) {
+      $('.form').find('.form__line-title').addClass('form-error');
+      return false;
+
+    } else if (elem.attr('id') == 'auth-radio-no' && !elem.is(':checked')) {
+      if (_radioYes.is(':checked')) {
+        $('.form').find('.form__line-title').removeClass('form-error');
+        return true;
+      }
+      
     } else {
       $('.form').find('.form__line-title').removeClass('form-error');
       return true;
