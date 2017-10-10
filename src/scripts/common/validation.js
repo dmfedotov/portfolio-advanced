@@ -3,12 +3,11 @@ export default (function () {
   var _form = null;
 
   // Если валидация прошла успешно, записывается true. Нужно для ajax запроса
-  var _result = false; 
+  var _result = false;
 
   // После выполнения метода валидации, результат (true, false), записывается в этот массив
-  var _resultArray = []; 
+  var _resultArray = [];
 
-  
   // Инит принимает форму, которую нужно валидировать и присваивает ее переменной
   function _init(form) {
     _form = form;
@@ -20,63 +19,52 @@ export default (function () {
   function _addListeners() {
     _form.submit(function (ev) {
       ev.preventDefault();
-
       // Каждый раз по событию, массив с результатами обнуляется
       _resultArray = [];
-
       // Валидация
-      _validate(_form, _onEmptyVariant);
-      _validate(_form, _onCheckVariant);
-      _validate(_form, _onRobotVariant);
-
+      _validate(_form);
       // Проверка успеха валидации
       _isResult(_resultArray);
     });
   }
 
-  // Принимает форму и метод валидации
-  function _validate(form, method) {
+  // Принимает форму
+  function _validate(form) {
     _result = true;
+
+    // Тип валидации
+    const _validType = {
+      'text': _onEmptyVariant,
+      'password': _onEmptyVariant,
+      'email': _onEmptyVariant,
+      'textarea': _onEmptyVariant,
+      'radio': _onRobotVariant,
+      'checkbox': _onCheckVariant,
+    };
 
     // Находим все инпуты и textarea
     let _formElems = form.find('input').add('textarea');
 
-    // Пробегаемся по всем инпутам и в зависимости от типа, проверяем его методом.
-    // Если метод вернул false, то _result = false
-    _formElems.each((i, elem) => {
-      
-      // Поля, которые будут проверяться на пустоту (_onEmptyVariant)
-      if ($(elem).attr('type') == 'text'
-             ||
-          $(elem).attr('type') == 'password'
-             ||
-          $(elem).attr('type') == 'email'
-             ||
-          $(elem).is('textarea')) {
-        if (!method($(elem))) {
-          _result = false;
+    // Для каждого типа поля, вызываем соответствующий метод
+    for (var key in _validType) {
+      _formElems.each((i, elem) => {
+        // инпуты
+        if ($(elem).attr('type') == key) {
+          if (!_validType[key]($(elem))) {
+            _result = false;
+          }
         }
-      }
-
-      // Поля, которые будут проверяться на чекбокс (_onCheckVariant)
-      if ($(elem).attr('type') == 'checkbox') {
-        if (!method($(elem))) {
-          _result = false;
+        // Textarea
+        if ($(elem).is('textarea')) {
+          if (!_validType[key]($(elem))) {
+            _result = false;
+          }
         }
-      }
-
-      // Поля, которые будут проверяться на нажатие определенного radio (_onRobotVariant)
-      if ($(elem).attr('type') == 'radio') {
-        if (!method($(elem))) {
-          _result = false;
-        }
-      }
-    });
-
+      });
+    }
     // Записываем _result в массив
     _resultArray.push(_result);
   }
-
 
   // Фукнция принимает массив, в котором записаны значения _result
   function _isResult(resArray) {
@@ -107,7 +95,6 @@ export default (function () {
     return _result;
   }
 
-
   // Проверка на то, что текстовые поля не пустые
   function _onEmptyVariant(elem) {
     // При наборе текста, класс с ошибкой удаляется
@@ -115,17 +102,7 @@ export default (function () {
       elem.parent().removeClass('form-error');
     });
 
-    // Тут лапша и проверки 😄
-    if (elem.attr('name') == 'login' && elem.val() == ''
-          ||
-        elem.attr('name') == 'name' && elem.val() == ''
-          ||
-        elem.attr('name') == 'password' && elem.val() == ''
-          ||
-        elem.attr('name') == 'message' && elem.val() == ''
-          ||
-        elem.attr('name') == 'email' && elem.val() == ''
-    ) {
+    if (elem.val() == '') {
       elem.parent().addClass('form-error');
       return false;
     } else {
@@ -134,7 +111,6 @@ export default (function () {
     }
   }
 
-
   // Проверка, что пользователь не робот
   function _onRobotVariant(elem) {
     elem.click(() => {
@@ -142,14 +118,14 @@ export default (function () {
       if (elem.attr('id') == 'auth-radio-yes') {
         if (elem.is(':checked')) {
           $('.form').find('.form__line-title').removeClass('form-error');
-        }     
+        }
       }
     });
 
     // Проверки
-    if (elem.attr('id') == 'auth-radio-yes' && !elem.prop('checked')
-                              ||
-        elem.attr('id') == 'auth-radio-no' && elem.prop('checked')) {
+    if (!elem.is(':checked')
+               ||
+        elem.attr('id') == 'auth-radio-no' && elem.is(':checked')) {
       $('.form').find('.form__line-title').addClass('form-error');
       return false;
     } else {
@@ -157,7 +133,6 @@ export default (function () {
       return true;
     }
   }
-
 
   // Проверка, что пользователь человек
   function _onCheckVariant(elem) {

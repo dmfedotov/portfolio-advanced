@@ -23,12 +23,10 @@ export default (function () {
       setTimeout(() => {
         element.style.strokeDasharray = _percent / 100 * _dasharrayLenght + ', ' + _dasharrayLenght;
       }, 500);
-      console.log('загружено после выполнения _preloaderLoad: ', _imagesLoaded);
     });
 
     // Cкрываем прелоадер
     if (_imagesLoaded >= _imagesCount) {
-      console.log('все картинки загружены. отключаем прелодаер');
       setTimeout(() => {
         _preloader.classList.add('preloader_hide');
       }, 1500);
@@ -38,16 +36,13 @@ export default (function () {
 
   // Основная функция
   const _imgLoading = () => {
-    console.log('зашли в ф-ю');
     // Получаем пути всех картинок в переборе
     for (let i = 0; i < _imagesCount; i++) {
-      console.log('зашли в цикл');
       let src = _images[i].src;
       // Возвращает промис, который создает новую картинку
       // В параметр source передается адрес картинки
       const _loadImage = function (source) {
         return new Promise((resolve, reject) => {
-          console.log('зашли в промис');
           let _image = new Image();
           _image.onload = resolve;
           _image.onerror = reject;
