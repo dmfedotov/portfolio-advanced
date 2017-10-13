@@ -8,6 +8,7 @@
   background: rgba($white-color, 0.05);
 
 @include phone {
+    width: 100%;
     max-width: none;
   }
 }

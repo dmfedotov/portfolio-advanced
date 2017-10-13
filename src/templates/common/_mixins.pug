@@ -25,10 +25,6 @@ mixin navList(navModifier, navLinkModifier, items, reduceStep)
           a(href= items[i].href class="nav__link nav__link_" + navLinkModifier)= items[i].name
 
 
-mixin blogArticle(articleName, articleDate)
-  .blog__article-title= articleName
-  .blog__article-date= articleDate
-
 mixin skills(skillsList)
   ul.skills__list
     each item in skillsList
@@ -97,6 +93,17 @@ mixin parallax()
       source(src="assets/videos/night.webm" type="video/webm")
   .parallax__layer
     img.parallax__layer-img(src="assets/images/bg/night_bg.png")
+
+mixin preloaderIcon()
+  svg(xmlns='http://www.w3.org/2000/svg', viewbox='-14 -10 80 92' class="icon preloader-elem")
+    text(class="preloader-elem__text" transform='matrix(1 0 0 1 5.772 45.0889)', font-family="'ArialMT'", font-size='24' text-anchor="middle" x="20" y="0") 0
+    circle(class="preloader-elem__inner" stroke-width='2.5864' stroke-miterlimit='10' cx='26.293' cy='37.438' r='25'
+      transform="rotate(-90 26.293 37.438)")
+    circle(class="preloader-elem__outer", cx='26.293', cy='4.5', r='4.5')
+
+
+  
+
   
 
     

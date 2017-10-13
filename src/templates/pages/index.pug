@@ -31,10 +31,14 @@ block content
                     input.form__input.form__input_login(type="text" placeholder="Логин"  name="login")
                     .form__field-icon
                       +icon("auth", "login")
+                    .form-tooltip.form-tooltip_login
+                      span.form-tooltip__text Вы не ввели логин
                   .form__field
                     input.form__input.form__input_login(type="password" placeholder="Пароль" name="password")
                     .form__field-icon
                       +icon("auth", "password")
+                    .form-tooltip.form-tooltip_password
+                      span.form-tooltip__text Вы не ввели пароль
                   .form__line
                     .form__checkbox
                       label.form__check-label
@@ -42,16 +46,21 @@ block content
                         .form__check-fake
                           +icon("check", "check")
                         .form__check-title Я человек
-                  .form__line-title Вы точно не робот?
+                          .form-tooltip.form-tooltip_right.form-tooltip_check
+                            span.form-tooltip__text Роботов не пускаем
+                  .form__line-title
+                    span.form__line-title-text Вы точно не робот?
+                      .form-tooltip.form-tooltip_right.form-tooltip_radio
+                        span.form-tooltip__text Роботов не пускаем
                   .form__line
                     .form__radio
                       label.form__radio-label
-                        input.form__radio-elem(type="radio", name="welcome-radio")
+                        input.form__radio-elem(type="radio", name="welcome-radio", id="auth-radio-yes")
                         .form__radio-fake
                         .form__radio-text Да
                     .form__radio
                       label.form__radio-label
-                        input.form__radio-elem(type="radio", name="welcome-radio")
+                        input.form__radio-elem(type="radio", name="welcome-radio", id="auth-radio-no")
                         .form__radio-fake
                         .form__radio-text Не уверен
               .welcome__auth-buttons

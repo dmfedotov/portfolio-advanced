@@ -3,13 +3,20 @@
   justify-content: center;
   padding: 60px 30px 0;
 
-  background: url("../images/bg/night_works_bg.jpg") center;
+  background-image: url("../images/bg/night_works_bg.jpg");
+  background-position: center;
   background-size: cover;
   background-attachment: fixed;
 
 @include phone {
     padding: 35px 10px;
   }
+}
+
+.reviews__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .reviews__content::after {
@@ -89,6 +96,7 @@
   background: inherit;
 
 @include phone {
+    width: 100%;
     margin-bottom: 40px;
   }
 }

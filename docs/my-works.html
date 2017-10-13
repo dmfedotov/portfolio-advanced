@@ -8,6 +8,17 @@
     <link rel="stylesheet" href="assets/styles/app.min.css">
   </head>
   <body>
+    <div class="preloader">
+      <div class="preloader__container">
+        <div class="preloader__icon">
+          <svg class="icon preloader-elem" xmlns="http://www.w3.org/2000/svg" viewbox="-14 -10 80 92">
+            <text class="preloader-elem__text" transform="matrix(1 0 0 1 5.772 45.0889)" text-anchor="middle" x="20" y="0">0</text>
+            <circle class="preloader-elem__inner" stroke-width="2.5864" stroke-miterlimit="10" cx="26.293" cy="37.438" r="25" transform="rotate(-90 26.293 37.438)"></circle>
+            <circle class="preloader-elem__outer" cx="26.293" cy="4.5" r="4.5"></circle>
+          </svg>
+        </div>
+      </div>
+    </div>
     <div class="wrapper">
       <main class="content">
         <section class="section header header_my-works">
@@ -67,7 +78,7 @@
               </svg>
             </div>
           </div>
-          <div class="header__scroll header__scroll_my-works scroll"><a class="scroll__link" href="#">
+          <div class="header__scroll header__scroll_my-works scroll"><a class="scroll__link" href="#" id="scroll-down">
               <div class="scroll__icon">
                 <svg class="icon icon_fill_white">
                   <use xlink:href="assets/images/icons/sprite.svg#portf_arrow_down"></use>
@@ -108,7 +119,7 @@
             </section>
           </div>
         </section>
-        <section class="portfolio">
+        <section class="portfolio" id="portfolio">
           <div class="slider">
             <div class="slider__info">
               <div class="project">
@@ -217,9 +228,18 @@
                   </div>
                   <div class="feedback__form">
                     <form class="form" action="#" method="post" id="feedback-form">
-                      <input class="form__input" type="text" placeholder="Ваше имя" id="name">
-                      <input class="form__input" type="email" placeholder="Ваш email" id="email">
-                      <textarea class="form__input" placeholder="Ваше сообщение" id="message" rows="6"></textarea>
+                      <div class="form__field">
+                        <input class="form__input" type="text" placeholder="Ваше имя" name="name">
+                        <div class="form-tooltip form-tooltip_password"><span class="form-tooltip__text">Необходимо ввести имя</span></div>
+                      </div>
+                      <div class="form__field"> 
+                        <input class="form__input" type="email" placeholder="Ваш email" name="email">
+                        <div class="form-tooltip form-tooltip_password"><span class="form-tooltip__text">Необходимо ввести почту</span></div>
+                      </div>
+                      <div class="form__field">
+                        <textarea class="form__input" placeholder="Ваше сообщение" name="message" rows="6"></textarea>
+                        <div class="form-tooltip form-tooltip_password"><span class="form-tooltip__text">Необходимо ввести сообщение</span></div>
+                      </div>
                     </form>
                   </div>
                 </div>
@@ -229,7 +249,7 @@
                 </div>
               </div>
             </div>
-            <div class="reviews__scroll scroll"><a class="scroll__link" href="#">
+            <div class="reviews__scroll scroll"><a class="scroll__link" href="#" id="scroll-up">
                 <div class="scroll__icon">
                   <svg class="icon icon_fill_white">
                     <use xlink:href="assets/images/icons/sprite.svg#portf_arrow_up"></use>

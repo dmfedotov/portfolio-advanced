@@ -8,6 +8,17 @@
     <link rel="stylesheet" href="assets/styles/app.min.css">
   </head>
   <body>
+    <div class="preloader">
+      <div class="preloader__container">
+        <div class="preloader__icon">
+          <svg class="icon preloader-elem" xmlns="http://www.w3.org/2000/svg" viewbox="-14 -10 80 92">
+            <text class="preloader-elem__text" transform="matrix(1 0 0 1 5.772 45.0889)" text-anchor="middle" x="20" y="0">0</text>
+            <circle class="preloader-elem__inner" stroke-width="2.5864" stroke-miterlimit="10" cx="26.293" cy="37.438" r="25" transform="rotate(-90 26.293 37.438)"></circle>
+            <circle class="preloader-elem__outer" cx="26.293" cy="4.5" r="4.5"></circle>
+          </svg>
+        </div>
+      </div>
+    </div>
     <div class="wrapper">
       <main class="content">
         <section class="welcome parallax">
@@ -65,6 +76,7 @@
                             <use xlink:href="assets/images/icons/sprite.svg#login"></use>
                           </svg>
                         </div>
+                        <div class="form-tooltip form-tooltip_login"><span class="form-tooltip__text">Вы не ввели логин</span></div>
                       </div>
                       <div class="form__field">
                         <input class="form__input form__input_login" type="password" placeholder="Пароль" name="password">
@@ -73,6 +85,7 @@
                             <use xlink:href="assets/images/icons/sprite.svg#password"></use>
                           </svg>
                         </div>
+                        <div class="form-tooltip form-tooltip_password"><span class="form-tooltip__text">Вы не ввели пароль</span></div>
                       </div>
                       <div class="form__line">
                         <div class="form__checkbox">
@@ -83,22 +96,25 @@
                                 <use xlink:href="assets/images/icons/sprite.svg#check"></use>
                               </svg>
                             </div>
-                            <div class="form__check-title">Я человек</div>
+                            <div class="form__check-title">Я человек
+                              <div class="form-tooltip form-tooltip_right form-tooltip_check"><span class="form-tooltip__text">Роботов не пускаем</span></div>
+                            </div>
                           </label>
                         </div>
                       </div>
-                      <div class="form__line-title">Вы точно не робот?</div>
+                      <div class="form__line-title"><span class="form__line-title-text">Вы точно не робот?
+                          <div class="form-tooltip form-tooltip_right form-tooltip_radio"><span class="form-tooltip__text">Роботов не пускаем</span></div></span></div>
                       <div class="form__line">
                         <div class="form__radio">
                           <label class="form__radio-label">
-                            <input class="form__radio-elem" type="radio" name="welcome-radio">
+                            <input class="form__radio-elem" type="radio" name="welcome-radio" id="auth-radio-yes">
                             <div class="form__radio-fake"></div>
                             <div class="form__radio-text">Да</div>
                           </label>
                         </div>
                         <div class="form__radio">
                           <label class="form__radio-label">
-                            <input class="form__radio-elem" type="radio" name="welcome-radio">
+                            <input class="form__radio-elem" type="radio" name="welcome-radio" id="auth-radio-no">
                             <div class="form__radio-fake"></div>
                             <div class="form__radio-text">Не уверен</div>
                           </label>

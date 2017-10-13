@@ -57,11 +57,31 @@
 
   border-right: solid 3px transparent;
 
+  
   &:hover {
     font-weight: 500;
-    color: $accent-color-darken;
+    color: #083c96;
+  }
+  
+ @include tablet {
+    color: rgba($white-color, 0.7);
+    &:hover {
+      color: $white-color;
+    }
+  }
 
-    border-right-color: $accent-color-darken;
+}
+
+.nav__link_blog_active {
+  font-weight: 500;
+  color: $accent-color-darken;
+
+  border-right-color: $accent-color-darken;
+
+@include tablet {
+    color: $white-color;
+
+    border-right: none;
   }
 }
 
@@ -196,6 +216,10 @@
   margin-bottom: 60px;
 
   text-align: center;
+
+@include footer__col-layout {
+    margin-bottom: 30px;
+  }
 }
 
 .nav__item_fullscreen_active {

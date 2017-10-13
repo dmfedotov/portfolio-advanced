@@ -3,10 +3,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  min-height: 650px;
   height: 100vh;
   padding-top: 100px;
 
-  background: url("../images/bg/header-bg.jpg") center;
+  background-image: url("../images/bg/header-bg.jpg");
+  background-position: center;
   background-size: cover;
 }
 
@@ -119,6 +121,10 @@
 
   display: flex;
   justify-content: center;
+}
+
+.header_blog .header__scroll {
+  z-index: 40;
 }
 
 .header__scroll_my-works {

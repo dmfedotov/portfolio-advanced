@@ -44,6 +44,7 @@
 }
 
 .form__line {
+  position: relative;
   display: flex;
   justify-content: center;
   margin-bottom: 14px;
@@ -77,15 +78,23 @@
 }
 
 .form__check-title {
+  position: relative;
+
   color: rgba($white-color, 0.8);
 }
 
 .form__line-title {
+  display: flex;
+  justify-content: center;
   margin-bottom: 10px;
+}
+
+.form__line-title-text {
+  position: relative;
 
   font-weight: 700;
   text-align: center;
-  color: rgba($white-color, 0.8);
+  color: $white-color;
 }
 
 .form__radio {
@@ -153,6 +162,8 @@
   display: flex;
 }
 
+// Validation styles
+
 .form__field {
   display: flex;
   width: 100%;
@@ -160,5 +171,135 @@
 
   border: none;
   outline: none;
+}
+
+.form-error {
+  position: relative;
+}
+
+.form-error .form__input_login,
+.form-error .form__input_password {
+  border-color: $red-color;
+}
+
+.form-success .form__input_login,
+.form-success .form__input_password {
+  border-color: $accent-color;
+}
+
+.form-error .form-tooltip_login,
+.form-error .form-tooltip_password,
+.form-error .form-tooltip_check,
+.form-error .form-tooltip_radio {
+  opacity: 1;
+  visibility: visible;
+}
+
+.form-error .icon_auth {
+  fill: $red-color;
+}
+
+.form-success .icon_auth {
+  fill: $accent-color;
+}
+
+.form-tooltip {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 45px;
+  padding: 10px 20px;
+
+  border-radius: 5px;
+  background: $red-color;
+  white-space: nowrap;
+  text-align: center;
+
+  opacity: 0;
+  visibility: hidden;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-bottom: 9px solid $red-color;
+    transform: translateX(-50%);
+  }
+}
+
+.form-tooltip_login,
+.form-tooltip_password {
+  position: absolute;
+  z-index: 1;
+  top: calc(100% + 10px);
+  left: 43px;
+
+  user-select: none;
+  transition: opacity .1s;
+}
+
+.form-tooltip_right {
+  &::after {
+    left: initial;
+    bottom: initial;
+    top: 50%;
+    right: 100%;
+    border-top: 9px solid transparent;
+    border-right: 9px solid $red-color;
+    border-bottom: 9px solid transparent;
+
+    transform: translateY(-50%);
+  }
+}
+
+.form-tooltip_check,
+.form-tooltip_radio {
+  position: absolute;
+  z-index: 1;
+  top: -10px;
+  left: calc(100% + 12px);
+
+  user-select: none;
+  transition: opacity .1s;
+
+  @include tablet {
+    top: calc(100% + 10px);
+    left: -92%;
+
+    &::after {
+      top: initial;
+      right: initial;
+      bottom: 100%;
+      left: 50%;
+
+      border-left: 9px solid transparent;
+      border-right: 9px solid transparent;
+      border-bottom: 9px solid $red-color;
+
+      transform: translateX(-50%);
+    }
+  }
+}
+
+.form-tooltip_radio {
+  @include tablet {
+    left: -15%;
+    transform: translateY(100%);
+  }
+}
+
+.form-tooltip__text {
+  font-weight: 500;
+  color: $white-color;
 }
 
